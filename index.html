@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Omar Mohamed Shehata — Full-Stack Freelancer specializing in Web Development, Cyber Security, and Graphic Design. Hire me for secure, modern, and visually stunning digital solutions.">
+  <meta name="keywords" content="Omar Shehata, Web Developer, Cyber Security, Graphic Design, Freelancer, Portfolio, CCNA, Penetration Testing, eJPT, Branding, Networking">
+  <meta name="author" content="Omar Mohamed Shehata">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Omar Shehata | Web Dev · Cyber Security · Design">
+  <meta property="og:description" content="Freelance services in web development, cyber security, and graphic design. Let's build something extraordinary.">
+  <meta property="og:type" content="website">
+  <title>Omar Shehata | Web Dev · Cyber Security · Design</title>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+:root{--primary:#38184C;--primary-light:#5a2d7a;--primary-dark:#250e33;--bg:#0D0D0D;--bg-secondary:#111111;--bg-card:#1a1a1a;--bg-card-hover:#222222;--text:#ffffff;--text-secondary:#b0b0b0;--text-muted:#666666;--accent:#c084fc;--accent-bright:#d8b4fe;--accent-dim:#a855f7;--border:rgba(255,255,255,.07);--border-hover:rgba(255,255,255,.15);--glow:rgba(168,85,247,.25);--glow-strong:rgba(168,85,247,.5);--shadow:0 8px 32px rgba(0,0,0,.4);--radius:12px;--radius-sm:8px;--radius-lg:20px;--transition:.35s cubic-bezier(.4,0,.2,1);--font-body:'Segoe UI','SF Pro Display',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;--font-mono:'SF Mono','Fira Code','Cascadia Code','Consolas','Liberation Mono',monospace;--success:#22c55e;--error:#ef4444}
+body.light{--bg:#f8f7f4;--bg-secondary:#efeee9;--bg-card:#ffffff;--bg-card-hover:#f5f4f0;--text:#1a1a1a;--text-secondary:#555555;--text-muted:#999999;--border:rgba(0,0,0,.08);--border-hover:rgba(0,0,0,.15);--glow:rgba(168,85,247,.15);--glow-strong:rgba(168,85,247,.3);--shadow:0 8px 32px rgba(0,0,0,.08)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;transition:background var(--transition),color var(--transition);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%;height:auto}button{cursor:pointer;border:none;background:none;font-family:inherit;color:inherit}input,textarea,select{font-family:inherit}ul{list-style:none}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--primary);border-radius:4px}::-webkit-scrollbar-thumb:hover{background:var(--primary-light)}
+html{scrollbar-color:var(--primary) var(--bg);scrollbar-width:thin}::selection{background:var(--accent-dim);color:#fff}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent-dim),var(--accent-bright));z-index:10001;width:0;pointer-events:none}
+.section-separator{height:1px;background:linear-gradient(90deg,transparent,var(--accent-dim),transparent);opacity:.25;margin:0 auto;max-width:600px}
+
+/* LOADER */
+.loader{position:fixed;inset:0;z-index:10000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .6s ease,visibility .6s ease}
+.loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-logo{font-family:var(--font-mono);font-size:48px;font-weight:700;letter-spacing:2px;opacity:0;transform:scale(.8);animation:loaderLogoIn .8s .2s ease forwards}
+.loader-logo .ll-accent{color:var(--accent)}
+@keyframes loaderLogoIn{to{opacity:1;transform:scale(1)}}
+.loader-ring{width:50px;height:50px;opacity:0;animation:loaderRingIn .5s .8s ease forwards}
+@keyframes loaderRingIn{to{opacity:1}}
+.loader-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.loader-track{fill:none;stroke:var(--border);stroke-width:3}
+.loader-fill{fill:none;stroke:var(--accent-dim);stroke-width:3;stroke-linecap:round;stroke-dasharray:283;stroke-dashoffset:283;animation:loaderSpin 1.4s 1s ease-in-out infinite}
+@keyframes loaderSpin{0%{stroke-dashoffset:283}50%{stroke-dashoffset:70}100%{stroke-dashoffset:283}}
+
+/* CURSOR */
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;transition:opacity .3s}
+.cursor-dot{width:6px;height:6px;background:var(--accent-bright);transform:translate(-50%,-50%)}
+.cursor-ring{width:36px;height:36px;border:1.5px solid var(--accent);opacity:.5;transform:translate(-50%,-50%);transition:width .25s,height .25s,opacity .25s,border-color .25s}
+.cursor-ring.hover{width:56px;height:56px;opacity:.2;border-color:var(--accent-bright)}
+.cursor-ring.hover-btn{width:64px;height:64px;opacity:.15;border-color:var(--accent-bright);background:rgba(168,85,247,.05)}
+body.cursor-hidden .cursor-dot,body.cursor-hidden .cursor-ring{opacity:0}
+@media(pointer:coarse){.cursor-dot,.cursor-ring{display:none!important}}
+
+#particleCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* NAV */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;transition:background var(--transition),padding var(--transition),box-shadow var(--transition)}
+.navbar.scrolled{background:rgba(13,13,13,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:12px 0;box-shadow:0 1px 0 var(--border)}
+body.light .navbar.scrolled{background:rgba(248,247,244,.85)}
+.nav-container{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center}
+.logo-text{font-family:var(--font-mono);font-size:22px;font-weight:700;letter-spacing:1px}
+.logo-accent{color:var(--accent)}
+.nav-links{display:flex;gap:24px}
+.nav-link{font-size:13px;font-weight:500;letter-spacing:.3px;color:var(--text-secondary);position:relative;padding:4px 0;transition:color var(--transition)}
+.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--accent-dim);border-radius:2px;transition:width var(--transition)}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.nav-link:hover::after,.nav-link.active::after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.theme-toggle{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-card);border:1px solid var(--border);transition:all var(--transition)}
+.theme-toggle:hover{border-color:var(--border-hover);background:var(--bg-card-hover);transform:rotate(15deg)}
+.theme-toggle svg{width:18px;height:18px}
+.icon-sun{display:none}body.light .icon-sun{display:block}body.light .icon-moon{display:none}
+.hamburger{display:none;flex-direction:column;gap:5px;width:28px;height:20px;justify-content:center}
+.hamburger span{display:block;width:100%;height:2px;background:var(--text);border-radius:2px;transition:all var(--transition);transform-origin:center}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-overlay{display:none;position:fixed;inset:0;z-index:998;background:rgba(0,0,0,.5);backdrop-filter:blur(4px)}
+.mobile-overlay.active{display:block}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--radius-sm);font-size:14px;font-weight:600;letter-spacing:.3px;transition:all var(--transition);position:relative;overflow:hidden}
+.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,0);transition:background .2s}
+.btn:active::after{background:rgba(255,255,255,.08)}.btn:active{transform:scale(.97)!important}
+.btn-primary{background:linear-gradient(135deg,var(--primary-light),var(--accent-dim));color:#fff;border:none;box-shadow:0 4px 20px var(--glow)}
+.btn-primary:hover{box-shadow:0 6px 30px var(--glow-strong);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border-hover)}
+.btn-outline:hover{border-color:var(--accent-dim);background:rgba(168,85,247,.08);transform:translateY(-2px)}
+.btn-full{width:100%;justify-content:center}
+.btn-sm{padding:10px 20px;font-size:13px}
+.btn-cta-glow{animation:ctaGlow 3s ease-in-out infinite}
+@keyframes ctaGlow{0%,100%{box-shadow:0 4px 20px var(--glow)}50%{box-shadow:0 4px 35px var(--glow-strong),0 0 60px var(--glow)}}
+
+/* SECTIONS */
+.section{position:relative;z-index:1;padding:100px 0}
+.section-header{text-align:center;margin-bottom:60px}
+.section-tag{display:inline-block;font-family:var(--font-mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding:6px 16px;border-radius:20px;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.2)}
+.section-title{font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-.5px;line-height:1.2}
+.section-cta-wrap{text-align:center;margin-top:40px}
+
+/* HERO */
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;padding:120px 0 60px;overflow:hidden}
+.hero-bg-orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.3;pointer-events:none;will-change:transform}
+.hero-bg-orb-1{width:500px;height:500px;background:var(--primary);top:-10%;right:-10%;animation:orbFloat 8s ease-in-out infinite}
+.hero-bg-orb-2{width:400px;height:400px;background:var(--accent-dim);bottom:-10%;left:-5%;animation:orbFloat 10s ease-in-out infinite reverse}
+@keyframes orbFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+.hero-container{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:60px;width:100%}
+.hero-content{flex:1;max-width:600px;will-change:transform;transition:transform .1s linear}
+.hero-greeting{font-family:var(--font-mono);font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.hero-name{font-size:clamp(32px,6vw,56px);font-weight:700;letter-spacing:-1px;line-height:1.1;margin-bottom:8px;min-height:1.2em}
+.hero-name .cursor-blink{display:inline-block;width:3px;height:.85em;background:var(--accent);margin-left:2px;vertical-align:text-bottom;animation:blink .8s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-title{font-size:clamp(16px,2.5vw,22px);font-weight:400;color:var(--text-secondary);margin-bottom:6px;min-height:1.5em}
+.hero-subtitle{font-size:15px;color:var(--text-muted);margin-bottom:32px;max-width:480px}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.hero-socials{display:flex;gap:16px}
+.hero-socials a{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--text-secondary);transition:all var(--transition)}
+.hero-socials a:hover{border-color:var(--accent-dim);color:var(--accent);background:rgba(168,85,247,.08);transform:translateY(-3px)}
+.hero-image{flex-shrink:0;will-change:transform;transition:transform .1s linear}
+.hero-photo-frame{position:relative;width:300px;height:380px;border-radius:var(--radius-lg);overflow:hidden;border:2px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 40px var(--glow)}
+.hero-photo{width:100%;height:100%;object-fit:cover;object-position:center center;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.hero-photo-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(56,24,76,.2),transparent);pointer-events:none}
+.scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-muted);font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.scroll-mouse{width:24px;height:38px;border-radius:12px;border:1.5px solid var(--text-muted);position:relative}
+.scroll-wheel{width:3px;height:8px;background:var(--accent);border-radius:2px;position:absolute;top:6px;left:50%;transform:translateX(-50%);animation:scrollWheel 1.8s ease-in-out infinite}
+@keyframes scrollWheel{0%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0;transform:translateX(-50%) translateY(14px)}}
+
+/* ABOUT */
+.about{background:var(--bg-secondary);transition:background var(--transition)}
+.about-grid{display:grid;grid-template-columns:340px 1fr;gap:60px;align-items:center}
+.about-photo-wrapper{position:relative}
+.about-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center center;border-radius:var(--radius-lg);box-shadow:var(--shadow),0 0 24px var(--glow)}
+.about-photo-border{position:absolute;inset:-12px;border-radius:calc(var(--radius-lg) + 4px);border:2px solid var(--accent-dim);opacity:.3;transition:all var(--transition)}
+.about-photo-wrapper:hover .about-photo-border{inset:-18px;opacity:.5}
+.about-heading{font-size:28px;font-weight:700;margin-bottom:4px}
+.about-role{font-size:15px;color:var(--accent);margin-bottom:20px}
+.about-text{font-size:15px;color:var(--text-secondary);margin-bottom:16px;line-height:1.8}
+.about-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.about-info-item{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary);padding:10px 14px;border-radius:var(--radius-sm);background:var(--bg-card);border:1px solid var(--border);transition:all var(--transition)}
+.about-info-item:hover{border-color:var(--accent-dim);background:var(--bg-card-hover);transform:translateY(-2px)}
+.about-info-item svg{flex-shrink:0;color:var(--accent)}
+
+/* WHY HIRE ME */
+.why-hire{background:var(--bg);transition:background var(--transition)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px 24px;text-align:center;transition:all var(--transition);position:relative;overflow:hidden}
+.why-card::before{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:linear-gradient(90deg,var(--accent-dim),var(--accent-bright));border-radius:3px 3px 0 0;opacity:0;transition:opacity var(--transition)}
+.why-card:hover{border-color:rgba(168,85,247,.35);transform:translateY(-6px);box-shadow:var(--shadow),0 0 30px var(--glow)}
+.why-card:hover::before{opacity:1}
+.why-icon{width:56px;height:56px;border-radius:var(--radius);background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.15);display:flex;align-items:center;justify-content:center;color:var(--accent);margin:0 auto 18px;transition:all var(--transition)}
+.why-card:hover .why-icon{background:rgba(168,85,247,.18);box-shadow:0 0 20px var(--glow);transform:scale(1.08)}
+.why-title{font-size:17px;font-weight:600;margin-bottom:8px}
+.why-desc{font-size:13px;color:var(--text-secondary);line-height:1.7}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
+.skill-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all var(--transition);animation-delay:var(--delay,0s)}
+.skill-card:hover{border-color:rgba(168,85,247,.35);background:var(--bg-card-hover);transform:translateY(-6px);box-shadow:var(--shadow),0 0 30px var(--glow)}
+.skill-card-icon{width:52px;height:52px;border-radius:var(--radius-sm);background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.15);display:flex;align-items:center;justify-content:center;color:var(--accent);margin-bottom:18px;transition:all var(--transition)}
+.skill-card:hover .skill-card-icon{background:rgba(168,85,247,.18);box-shadow:0 0 20px var(--glow)}
+.skill-card-title{font-size:18px;font-weight:600;margin-bottom:20px}
+.skill-bars{display:flex;flex-direction:column;gap:14px}
+.skill-bar-item{display:flex;align-items:center;gap:10px}
+.skill-name{font-size:12px;font-weight:500;color:var(--text-secondary);width:110px;flex-shrink:0}
+.skill-bar{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.skill-bar-fill{height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,var(--primary-light),var(--accent-dim));transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.skill-bar-fill.animated{width:var(--fill-width,0%)}
+.skill-pct{font-size:12px;font-family:var(--font-mono);color:var(--text-muted);width:36px;text-align:right}
+.skill-badge{display:inline-block;font-size:10px;font-family:var(--font-mono);letter-spacing:1px;padding:3px 10px;border-radius:20px;background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.2);color:var(--accent);margin-bottom:14px}
+
+/* SERVICES */
+.services{background:var(--bg-secondary);transition:background var(--transition)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px 28px;text-align:center;transition:all var(--transition);position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent-dim),var(--accent-bright));opacity:0;transition:opacity var(--transition)}
+.service-card:hover{border-color:rgba(168,85,247,.35);transform:translateY(-6px);box-shadow:var(--shadow),0 0 30px var(--glow)}
+.service-card:hover::before{opacity:1}
+.service-icon{width:64px;height:64px;border-radius:var(--radius);background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.15);display:flex;align-items:center;justify-content:center;color:var(--accent);margin:0 auto 20px;transition:all var(--transition)}
+.service-card:hover .service-icon{background:rgba(168,85,247,.18);box-shadow:0 0 20px var(--glow);transform:scale(1.08)}
+.service-title{font-size:18px;font-weight:600;margin-bottom:10px}
+.service-desc{font-size:14px;color:var(--text-secondary);line-height:1.7}
+
+/* TERMINAL */
+.terminal-section{background:var(--bg);transition:background var(--transition)}
+.terminal-wrap{max-width:750px;margin:0 auto}
+.terminal-window{background:#0a0a0a;border:1px solid rgba(168,85,247,.2);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 40px var(--glow)}
+.terminal-titlebar{display:flex;align-items:center;gap:8px;padding:14px 18px;background:#111;border-bottom:1px solid rgba(255,255,255,.06)}
+.terminal-dot{width:12px;height:12px;border-radius:50%}
+.terminal-dot-red{background:#ff5f57}.terminal-dot-yellow{background:#febc2e}.terminal-dot-green{background:#28c840}
+.terminal-title{flex:1;text-align:center;font-family:var(--font-mono);font-size:12px;color:var(--text-muted);letter-spacing:1px}
+.terminal-body{padding:20px 24px;min-height:320px;max-height:400px;overflow-y:auto;font-family:var(--font-mono);font-size:13px;line-height:1.8;color:#4ade80}
+.terminal-body::-webkit-scrollbar{width:4px}.terminal-body::-webkit-scrollbar-thumb{background:#333;border-radius:2px}
+.terminal-line{margin-bottom:2px}.terminal-line.cmd{color:#e2e8f0}.terminal-line.cmd::before{content:'$ ';color:var(--accent)}
+.terminal-line.output{color:#94a3b8}.terminal-line.highlight{color:var(--accent-bright)}
+.terminal-input-wrap{display:flex;align-items:center;gap:0;margin-top:4px}
+.terminal-input-prompt{color:var(--accent);font-family:var(--font-mono);font-size:13px;white-space:pre}
+.terminal-input{flex:1;background:none;border:none;outline:none;color:#e2e8f0;font-family:var(--font-mono);font-size:13px;caret-color:var(--accent)}
+.terminal-cursor-blink{display:inline-block;width:8px;height:16px;background:var(--accent);animation:blink 1s step-end infinite;vertical-align:middle;margin-left:1px}
+.terminal-scanline{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 4px);border-radius:var(--radius-lg)}
+.terminal-hint{text-align:center;margin-top:16px;font-size:12px;color:var(--text-muted);font-family:var(--font-mono)}
+
+/* PROJECTS */
+.projects{transition:background var(--transition)}
+.projects-filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.filter-btn{padding:8px 22px;border-radius:24px;font-size:13px;font-weight:500;letter-spacing:.3px;background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);transition:all var(--transition);cursor:pointer}
+.filter-btn:hover{border-color:var(--border-hover);color:var(--text);background:var(--bg-card-hover)}
+.filter-btn.active{background:linear-gradient(135deg,var(--primary-light),var(--accent-dim));color:#fff;border-color:transparent;box-shadow:0 4px 16px var(--glow)}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;transition:all .3s ease}
+.project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all var(--transition);animation-delay:var(--delay,0s)}
+.project-card:hover{border-color:rgba(168,85,247,.3);background:var(--bg-card-hover);transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,.35),0 0 30px var(--glow)}
+.project-card-cover{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--bg)}
+.project-card-cover img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .6s cubic-bezier(.4,0,.2,1),filter .6s ease}
+.project-card:hover .project-card-cover img{transform:scale(1.05);filter:brightness(1.05)}
+.project-card-tags{position:absolute;top:10px;left:10px;display:flex;gap:6px;flex-wrap:wrap}
+.project-tag{font-size:10px;font-family:var(--font-mono);letter-spacing:.5px;padding:3px 10px;border-radius:20px;background:rgba(0,0,0,.6);color:var(--accent-bright);border:1px solid rgba(168,85,247,.25);backdrop-filter:blur(8px)}
+.project-card-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px}
+.project-card-title{font-size:15px;font-weight:600;line-height:1.4;color:var(--text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.project-card-actions{display:flex;gap:8px;margin-top:2px}
+.project-card-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:1;padding:10px 16px;border-radius:var(--radius-sm);font-size:13px;font-weight:500;color:var(--accent-bright);background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.18);transition:all var(--transition)}
+.project-card-btn svg{width:16px;height:16px;transition:transform var(--transition)}
+.project-card-btn:hover{background:rgba(168,85,247,.15);border-color:rgba(168,85,247,.35)}
+.project-card-btn:hover svg{transform:translateX(3px)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery-item{position:relative;border-radius:var(--radius);overflow:hidden;cursor:pointer;aspect-ratio:4/3;border:1px solid var(--border);transition:all var(--transition)}
+.gallery-item:hover{border-color:rgba(168,85,247,.35);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.35),0 0 30px var(--glow)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item-overlay{position:absolute;bottom:0;left:0;right:0;padding:20px 14px 14px;background:linear-gradient(transparent,rgba(0,0,0,.75));transform:translateY(100%);transition:transform .35s ease}
+.gallery-item:hover .gallery-item-overlay{transform:translateY(0)}
+.gallery-item-name{font-size:13px;font-weight:600;color:#fff;line-height:1.3}
+.gallery-item-cat{font-size:10px;font-family:var(--font-mono);color:var(--accent-bright);letter-spacing:1px;margin-bottom:2px}
+@media(max-width:1024px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+@media(max-width:480px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:8px}.gallery-item-overlay{padding:12px 8px 8px;transform:translateY(0);background:linear-gradient(transparent,rgba(0,0,0,.6))}.gallery-item-name{font-size:11px}}
+.project-card-btn-details{color:var(--accent-bright)}
+.project-card-btn-live{color:var(--success);background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.18)}
+.project-card-btn-live:hover{background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.35)}
+.no-projects{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-muted);font-size:15px}
+
+/* CASE STUDY MODAL */
+.cs-modal{position:fixed;inset:0;z-index:10002;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s ease}
+.cs-modal.active{opacity:1;visibility:visible}
+.cs-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.92);backdrop-filter:blur(16px)}
+.cs-container{position:relative;width:94%;max-width:800px;max-height:90vh;overflow-y:auto;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);transform:scale(.92) translateY(20px);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.cs-modal.active .cs-container{transform:scale(1) translateY(0)}
+.cs-container::-webkit-scrollbar{width:6px}.cs-container::-webkit-scrollbar-thumb{background:var(--primary);border-radius:3px}
+.cs-close{position:sticky;top:0;float:right;margin:16px 16px 0 0;z-index:5;width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;transition:all var(--transition);backdrop-filter:blur(8px)}
+.cs-close:hover{background:rgba(168,85,247,.35);border-color:rgba(168,85,247,.5);transform:rotate(90deg)}
+.cs-image{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.cs-content{padding:32px}
+.cs-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.cs-tag{font-size:11px;font-family:var(--font-mono);padding:4px 14px;border-radius:20px;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.2);color:var(--accent);font-weight:500}
+.cs-title{font-size:26px;font-weight:700;margin-bottom:24px}
+.cs-section{margin-bottom:20px}
+.cs-section-label{font-family:var(--font-mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.cs-section-label svg{width:16px;height:16px}
+.cs-section-text{font-size:14px;color:var(--text-secondary);line-height:1.8}
+.cs-tools{display:flex;flex-wrap:wrap;gap:8px}
+.cs-tool{font-size:12px;padding:6px 14px;border-radius:var(--radius-sm);background:var(--bg);border:1px solid var(--border);color:var(--text-secondary);font-weight:500}
+.cs-result{padding:16px 20px;border-radius:var(--radius-sm);background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15)}
+.cs-result-text{font-size:14px;color:#4ade80;font-weight:500;line-height:1.7}
+
+
+
+/* TIMELINE */
+.timeline{position:relative;max-width:800px;margin:0 auto;padding:20px 0}
+.timeline-line{position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--border);transform:translateX(-50%)}
+.timeline-item{position:relative;width:50%;padding:0 40px 60px}
+.timeline-item-left{left:0;text-align:right}.timeline-item-right{left:50%;text-align:left}
+.timeline-dot{position:absolute;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent-dim);border:3px solid var(--bg);z-index:1;box-shadow:0 0 12px var(--glow)}
+.timeline-item-left .timeline-dot{right:-8px}.timeline-item-right .timeline-dot{left:-8px}
+.timeline-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all var(--transition)}
+.timeline-card:hover{border-color:rgba(168,85,247,.3);box-shadow:var(--shadow),0 0 20px var(--glow);transform:translateY(-4px)}
+.timeline-date{font-family:var(--font-mono);font-size:12px;letter-spacing:1px;color:var(--accent);margin-bottom:8px;display:block}
+.timeline-title{font-size:18px;font-weight:600;margin-bottom:10px}
+.timeline-desc{font-size:14px;color:var(--text-secondary);line-height:1.7}
+.timeline-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.timeline-item-left .timeline-tags{justify-content:flex-end}
+.timeline-tags span{font-size:11px;padding:4px 12px;border-radius:20px;background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.15);color:var(--accent);font-weight:500}
+
+/* STATS */
+.stats{background:var(--bg-secondary);transition:background var(--transition)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat-card{text-align:center;padding:36px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);transition:all var(--transition);animation-delay:var(--delay,0s)}
+.stat-card:hover{border-color:rgba(168,85,247,.35);transform:translateY(-6px);box-shadow:var(--shadow),0 0 30px var(--glow)}
+.stat-number{font-size:42px;font-weight:700;color:var(--accent);font-family:var(--font-mono);line-height:1.2}
+.stat-label{font-size:14px;color:var(--text-secondary);margin-top:8px}
+
+/* LEAD MAGNET */
+.lead-magnet{background:var(--bg);transition:background var(--transition)}
+.lead-card{max-width:600px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:48px 40px;text-align:center;position:relative;overflow:hidden}
+.lead-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at center,rgba(168,85,247,.06),transparent 60%);pointer-events:none}
+.lead-icon{width:64px;height:64px;border-radius:50%;background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.2);display:flex;align-items:center;justify-content:center;color:var(--accent);margin:0 auto 20px}
+.lead-title{font-size:24px;font-weight:700;margin-bottom:8px}
+.lead-desc{font-size:14px;color:var(--text-secondary);margin-bottom:28px;line-height:1.7}
+.lead-form{display:flex;gap:12px;max-width:420px;margin:0 auto 12px}
+.lead-input{flex:1;padding:14px 18px;border-radius:var(--radius-sm);background:var(--bg);border:1px solid var(--border);color:var(--text);font-size:14px;outline:none;transition:border-color var(--transition)}
+.lead-input::placeholder{color:var(--text-muted)}
+.lead-input:focus{border-color:var(--accent-dim)}
+.lead-note{font-size:12px;color:var(--text-muted)}
+.lead-success{display:none;padding:24px;color:var(--success);font-weight:500}
+.lead-success.show{display:block}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-intro{font-size:15px;color:var(--text-secondary);line-height:1.8;margin-bottom:28px}
+.contact-details{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:28px}
+.contact-detail-item{display:flex;align-items:center;gap:16px;padding:14px 16px;border-radius:var(--radius-sm);background:var(--bg-card);border:1px solid var(--border);transition:all var(--transition)}
+.contact-detail-item:hover{border-color:var(--accent-dim);transform:translateX(4px);box-shadow:0 4px 16px var(--glow)}
+.contact-icon{width:42px;height:42px;border-radius:var(--radius-sm);background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.15);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0}
+.contact-detail-label{display:block;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.contact-detail-value{font-size:14px;font-weight:500}
+.contact-socials{display:flex;gap:12px}
+.contact-social-link{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);transition:all var(--transition)}
+.contact-social-link:hover{border-color:var(--accent-dim);color:var(--accent);background:rgba(168,85,247,.08);transform:translateY(-3px)}
+
+/* FORM */
+.form-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px}
+.form-group{margin-bottom:18px}
+.form-label{display:block;font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--text-secondary);margin-bottom:6px}
+.form-input,.form-textarea,.form-select{width:100%;padding:12px 16px;border-radius:var(--radius-sm);background:var(--bg);border:1px solid var(--border);color:var(--text);font-size:14px;outline:none;transition:border-color var(--transition)}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--text-muted)}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--accent-dim)}
+.form-textarea{resize:vertical;min-height:120px}
+.form-select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-select option{background:var(--bg-card);color:var(--text)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-submit{width:100%;justify-content:center}
+.form-submit .spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.form-reply-note{text-align:center;margin-top:14px;font-size:12px;color:var(--text-muted);display:flex;align-items:center;justify-content:center;gap:6px}
+.form-reply-note svg{color:var(--accent);flex-shrink:0}
+
+/* GALLERY MODAL */
+.gallery-modal{position:fixed;inset:0;z-index:10001;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s ease}
+.gallery-modal.active{opacity:1;visibility:visible}
+.gallery-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.95);backdrop-filter:blur(16px)}
+.gallery-container{position:relative;width:94%;height:92vh;max-width:1000px;display:flex;flex-direction:column;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transform:scale(.92) translateY(20px);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.gallery-modal.active .gallery-container{transform:scale(1) translateY(0)}
+.gallery-header{display:flex;align-items:center;gap:16px;padding:14px 20px 10px;flex-shrink:0}
+.gallery-header-info{flex:1;min-width:0}
+.gallery-cat{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:2px}
+.gallery-title{font-size:18px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gallery-counter{font-family:var(--font-mono);font-size:12px;color:var(--text-muted);flex-shrink:0;padding:5px 12px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid var(--border)}
+.gallery-close{position:absolute;top:12px;right:12px;z-index:5;width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;transition:all var(--transition);backdrop-filter:blur(8px)}
+.gallery-close:hover{background:rgba(168,85,247,.35);border-color:rgba(168,85,247,.5);transform:rotate(90deg)}
+.gallery-viewport{position:relative;flex:1 1 0%;min-height:0;display:flex;align-items:center;justify-content:center;background:#0a0a0a;overflow:hidden;cursor:zoom-in}
+.gallery-viewport.zoomed{cursor:grab;overflow:auto}
+.gallery-viewport.zoomed:active{cursor:grabbing}
+.gallery-image-wrap{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:6px}
+.gallery-image{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;opacity:1;transform:scale(1);transition:opacity .3s ease,transform .3s ease}
+.gallery-image.transitioning{opacity:0;transform:scale(.97)}
+.gallery-image.zoomed{max-width:none;max-height:none;transform:scale(2);cursor:grab;transition:transform .3s ease}
+.gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;transition:all var(--transition);backdrop-filter:blur(8px)}
+.gallery-arrow:hover{background:rgba(168,85,247,.4);border-color:rgba(168,85,247,.5);transform:translateY(-50%) scale(1.08)}
+.gallery-arrow:active{transform:translateY(-50%) scale(.95)}
+.gallery-prev{left:14px}.gallery-next{right:14px}
+.gallery-arrow.arrow-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.gallery-desc{padding:10px 20px 12px;font-size:13px;color:var(--text-secondary);line-height:1.6;border-top:1px solid var(--border);flex-shrink:0}
+.gallery-thumbs{display:flex;gap:6px;padding:8px 20px 12px;overflow-x:auto;flex-shrink:0;border-top:1px solid var(--border)}
+.gallery-thumbs::-webkit-scrollbar{height:3px}.gallery-thumbs::-webkit-scrollbar-thumb{background:var(--primary);border-radius:2px}
+.gallery-thumb{flex-shrink:0;width:56px;height:56px;border-radius:var(--radius-sm);overflow:hidden;border:2px solid transparent;cursor:pointer;transition:all var(--transition);opacity:.45}
+.gallery-thumb:hover{opacity:.75;border-color:var(--border-hover)}
+.gallery-thumb.active{opacity:1;border-color:var(--accent-dim);box-shadow:0 0 12px var(--glow)}
+.gallery-thumb img{width:100%;height:100%;object-fit:cover}
+.gallery-modal.single-image .gallery-counter,.gallery-modal.single-image .gallery-thumbs{display:none}
+
+/* FOOTER */
+.footer{position:relative;z-index:1;padding:48px 0;border-top:1px solid var(--border);background:var(--bg-secondary);transition:background var(--transition)}
+.footer-content{text-align:center}
+.footer-logo{font-family:var(--font-mono);font-size:24px;font-weight:700;margin-bottom:8px}
+.footer-text{font-size:14px;color:var(--text-muted);margin-bottom:20px}
+.footer-socials{display:flex;justify-content:center;gap:12px;margin-bottom:24px}
+.footer-socials a{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--text-muted);transition:all var(--transition)}
+.footer-socials a:hover{border-color:var(--accent-dim);color:var(--accent)}
+.footer-copy{font-size:12px;color:var(--text-muted)}
+
+/* FLOATING */
+
+
+.toast{position:fixed;bottom:30px;right:30px;z-index:10003;display:flex;align-items:center;gap:10px;padding:14px 24px;background:var(--bg-card);border:1px solid rgba(34,197,94,.3);border-radius:var(--radius-sm);color:#22c55e;font-size:14px;font-weight:500;box-shadow:0 8px 32px rgba(0,0,0,.3);transform:translateY(100px);opacity:0;visibility:hidden;transition:all .4s cubic-bezier(.4,0,.2,1);max-width:400px}
+.toast.show{transform:translateY(0);opacity:1;visibility:visible}
+.toast.toast-error{border-color:rgba(239,68,68,.3);color:#ef4444}
+
+.scroll-top{position:fixed;bottom:30px;right:30px;z-index:999;width:44px;height:44px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-secondary);box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(20px);transition:all var(--transition)}
+.scroll-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.scroll-top:hover{border-color:var(--accent-dim);color:var(--accent);transform:translateY(-3px)}
+
+.reveal-up,.reveal-left,.reveal-right,.reveal-scale{opacity:0;transition:opacity .7s ease,transform .7s ease}
+.reveal-up{transform:translateY(40px)}.reveal-left{transform:translateX(-40px)}.reveal-right{transform:translateX(40px)}.reveal-scale{transform:scale(.9)}
+.reveal-up.revealed,.reveal-left.revealed,.reveal-right.revealed,.reveal-scale.revealed{opacity:1;transform:translate(0) scale(1)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-container{flex-direction:column-reverse;text-align:center;gap:40px}
+  .hero-content{max-width:100%}.hero-buttons{justify-content:center}.hero-socials{justify-content:center}
+  .hero-photo-frame{width:260px;height:330px}
+  .about-grid{grid-template-columns:1fr;gap:40px;text-align:center}
+  .about-photo-wrapper{max-width:280px;margin:0 auto}.about-info-grid{grid-template-columns:1fr}
+  .stats-grid,.achievements-grid{grid-template-columns:repeat(2,1fr)}
+  .projects-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .services-grid,.why-grid,.testimonials-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .nav-links{position:fixed;top:0;right:0;width:280px;height:100vh;background:var(--bg-card);flex-direction:column;padding:100px 32px 40px;gap:24px;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:-10px 0 40px rgba(0,0,0,.3);z-index:999}
+  .nav-links.open{transform:translateX(0)}.nav-link{font-size:16px}.hamburger{display:flex}
+  .section{padding:70px 0}.skills-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .project-card-body{padding:12px 14px 14px;gap:8px}.project-card-title{font-size:13px}.project-card-btn{font-size:12px;padding:8px 12px}
+  .gallery-container{width:97%;height:95vh}.gallery-arrow{width:38px;height:38px;font-size:20px}.gallery-prev{left:8px}.gallery-next{right:8px}
+  .timeline-item{width:100%;left:0!important;text-align:left!important;padding:0 0 40px 50px}
+  .timeline-line{left:8px}.timeline-dot{left:0!important;right:auto!important}
+  .timeline-item-left .timeline-tags{justify-content:flex-start}
+  .hero-photo-frame{width:220px;height:280px}.scroll-indicator{display:none}
+  .services-grid,.why-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}.lead-form{flex-direction:column}
+ .scroll-top{bottom:20px;right:20px;width:40px;height:40px}
+  .cs-content{padding:24px}
+}
+@media(max-width:480px){
+  .hero-buttons{flex-direction:column;align-items:center}.btn{width:100%;justify-content:center}
+  .stats-grid,.achievements-grid{grid-template-columns:1fr 1fr}.stat-number,.achievement-number{font-size:32px}
+  .projects-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .project-card-body{padding:8px 10px 10px;gap:6px}.project-card-title{font-size:11px;-webkit-line-clamp:1}
+  .project-card-btn{font-size:11px;padding:7px 10px}.project-card-btn span{display:none}
+  .project-card-tags{display:none}
+  .gallery-container{width:100%;height:100vh;border-radius:0}
+  .filter-btn{padding:6px 16px;font-size:12px}
+  .lead-card{padding:32px 24px}
+}
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">O<span class="ll-accent">S</span></div>
+    <div class="loader-ring">
+      <svg viewBox="0 0 100 100"><circle class="loader-track" cx="50" cy="50" r="45"/><circle class="loader-fill" cx="50" cy="50" r="45"/></svg>
+    </div>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo"><span class="logo-text">O<span class="logo-accent">S</span></span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#why-hire" class="nav-link">Why Me</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-orb hero-bg-orb-1"></div>
+      <div class="hero-bg-orb hero-bg-orb-2"></div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <p class="hero-greeting reveal-up">Hello, I'm</p>
+          <h1 class="hero-name reveal-up" id="heroName"></h1>
+          <p class="hero-title reveal-up" id="heroTitle"></p>
+          <p class="hero-subtitle reveal-up">Electrical Engineering Student &mdash; Communications &amp; Electronics. I build secure, modern, and visually compelling digital solutions.</p>
+          <div class="hero-buttons reveal-up">
+            <a href="#contact" class="btn btn-primary btn-cta-glow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Start a Project
+            </a>
+            <a href="#projects" class="btn btn-outline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              View Projects
+            </a>
+          </div>
+                    <div class="hero-socials reveal-up">
+            <a href="https://instagram.com/omarshehata_designs26" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://linkedin.com/in/omar-shehata-020bab344" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="https://behance.net/omarshehata14" target="_blank" rel="noopener" aria-label="Behance"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg></a>
+          </div>
+        </div>
+        <div class="hero-image reveal-scale">
+          <div class="hero-photo-frame">
+            <img src="https://z-cdn-media.chatglm.cn/files/2d7324b4-83c8-4348-af22-84d47dede021.png?auth_key=1878009477-e704144caa92453781282a53965e6453-0-74d5bd7aa4b87192f0389ea576cdbb36" alt="Omar Mohamed Shehata" class="hero-photo" loading="eager">
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator"><div class="scroll-mouse"><div class="scroll-wheel"></div></div><span>Scroll Down</span></div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-header reveal-up"><span class="section-tag">Get To Know Me</span><h2 class="section-title">About Me</h2></div>
+        <div class="about-grid">
+          <div class="about-image reveal-left">
+            <div class="about-photo-wrapper">
+              <img src="https://z-cdn-media.chatglm.cn/files/2d7324b4-83c8-4348-af22-84d47dede021.png?auth_key=1878009477-e704144caa92453781282a53965e6453-0-74d5bd7aa4b87192f0389ea576cdbb36" alt="Omar Shehata" class="about-photo" loading="lazy">
+              <div class="about-photo-border"></div>
+            </div>
+          </div>
+          <div class="about-content reveal-right">
+            <h3 class="about-heading">Omar Mohamed Shehata</h3>
+            <p class="about-role">Electrical Engineering Student &bull; Communications &amp; Electronics</p>
+            <p class="about-text">Motivated Electrical Engineering student specializing in Communications and Electronics, with hands-on experience in graphic design and freelance marketing. Skilled in combining technical expertise with creative problem-solving to deliver impactful solutions.</p>
+            <p class="about-text">Passionate about networking, web development, and digital design. I thrive at the intersection of technology and creativity — building things that are both functional and visually compelling.</p>
+            <div class="about-info-grid">
+              <div class="about-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>oshehata925@gmail.com</span></div>
+              <div class="about-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span>Horus University</span></div>
+              <div class="about-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span>Arabic (Native) &bull; English</span></div>
+              <div class="about-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><span>Communications &amp; Electronics</span></div>
+            </div>
+            <div class="section-cta-wrap reveal-up" style="margin-top:32px"><a href="#contact" class="btn btn-primary btn-sm">Let's Work Together <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- WHY HIRE ME -->
+    <section class="section why-hire" id="why-hire">
+      <div class="container">
+        <div class="section-header reveal-up"><span class="section-tag">My Value</span><h2 class="section-title">Why Hire Me</h2></div>
+        <div class="why-grid">
+          <div class="why-card reveal-up" style="--delay:.05s">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="26" height="26"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <h3 class="why-title">Fast Delivery</h3>
+            <p class="why-desc">I understand deadlines matter. Every project is delivered on time without compromising quality — because your time is valuable.</p>
+          </div>
+          <div class="why-card reveal-up" style="--delay:.1s">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="26" height="26"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3 class="why-title">Security-First Mindset</h3>
+            <p class="why-desc">With eJPTv2 training and CCNA knowledge, I build and configure systems with security baked in — not bolted on as an afterthought.</p>
+          </div>
+          <div class="why-card reveal-up" style="--delay:.15s">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="26" height="26"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+            <h3 class="why-title">Clean &amp; Modern UI</h3>
+            <p class="why-desc">Every design follows modern aesthetics — clean layouts, consistent spacing, and pixel-perfect details that elevate your brand.</p>
+          </div>
+          <div class="why-card reveal-up" style="--delay:.2s">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="26" height="26"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <h3 class="why-title">Problem-Solving Focus</h3>
+            <p class="why-desc">I don't just execute tasks — I analyze the root problem and craft solutions that create real, measurable impact for your business.</p>
+          </div>
+          <div class="why-card reveal-up" style="--delay:.25s">
+            <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="26" height="26"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+            <h3 class="why-title">Multi-Discipline Skills</h3>
+            <p class="why-desc">Web dev, cyber security, networking, and design — one freelancer, multiple skill sets. No need to hire a whole team for your project.</p>
+          </div>
+        </div>
+        <div class="section-cta-wrap reveal-up"><a href="#contact" class="btn btn-primary">Hire Me <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- SKILLS -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <div class="section-header reveal-up"><span class="section-tag">What I Can Do</span><h2 class="section-title">Skills &amp; Expertise</h2></div>
+        <div class="skills-grid">
+          <div class="skill-card reveal-up" style="--delay:.05s"><div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3 class="skill-card-title">Web Development</h3><div class="skill-bars"><div class="skill-bar-item"><span class="skill-name">HTML</span><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div><span class="skill-pct">85%</span></div><div class="skill-bar-item"><span class="skill-name">CSS</span><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div><span class="skill-pct">80%</span></div><div class="skill-bar-item"><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-bar-fill" data-width="70"></div></div><span class="skill-pct">70%</span></div></div></div>
+          <div class="skill-card reveal-up" style="--delay:.1s"><div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div><h3 class="skill-card-title">Programming</h3><div class="skill-bars"><div class="skill-bar-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-bar-fill" data-width="75"></div></div><span class="skill-pct">75%</span></div><div class="skill-bar-item"><span class="skill-name">C/C++</span><div class="skill-bar"><div class="skill-bar-fill" data-width="65"></div></div><span class="skill-pct">65%</span></div></div></div>
+          <div class="skill-card reveal-up" style="--delay:.15s"><div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3 class="skill-card-title">Networking</h3><div class="skill-bars"><div class="skill-bar-item"><span class="skill-name">CCNA</span><div class="skill-bar"><div class="skill-bar-fill" data-width="65"></div></div><span class="skill-pct">65%</span></div><div class="skill-bar-item"><span class="skill-name">Packet Tracer</span><div class="skill-bar"><div class="skill-bar-fill" data-width="70"></div></div><span class="skill-pct">70%</span></div></div></div>
+          <div class="skill-card reveal-up" style="--delay:.2s"><div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><h3 class="skill-card-title">Graphic Design</h3><div class="skill-bars"><div class="skill-bar-item"><span class="skill-name">Photoshop</span><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div><span class="skill-pct">85%</span></div><div class="skill-bar-item"><span class="skill-name">Illustrator</span><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div><span class="skill-pct">80%</span></div><div class="skill-bar-item"><span class="skill-name">InDesign</span><div class="skill-bar"><div class="skill-bar-fill" data-width="70"></div></div><span class="skill-pct">70%</span></div></div></div>
+          <div class="skill-card reveal-up" style="--delay:.25s"><div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="skill-card-title">Cyber Security</h3><span class="skill-badge">eJPTv2 Student</span><div class="skill-bars"><div class="skill-bar-item"><span class="skill-name">Pen Testing</span><div class="skill-bar"><div class="skill-bar-fill" data-width="65"></div></div><span class="skill-pct">65%</span></div><div class="skill-bar-item"><span class="skill-name">Network Sec</span><div class="skill-bar"><div class="skill-bar-fill" data-width="60"></div></div><span class="skill-pct">60%</span></div></div></div>
+          <div class="skill-card reveal-up" style="--delay:.3s"><div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div><h3 class="skill-card-title">Media &amp; Tools</h3><div class="skill-bars"><div class="skill-bar-item"><span class="skill-name">Video Editing</span><div class="skill-bar"><div class="skill-bar-fill" data-width="65"></div></div><span class="skill-pct">65%</span></div><div class="skill-bar-item"><span class="skill-name">VS Code</span><div class="skill-bar"><div class="skill-bar-fill" data-width="80"></div></div><span class="skill-pct">80%</span></div><div class="skill-bar-item"><span class="skill-name">MS Office</span><div class="skill-bar"><div class="skill-bar-fill" data-width="85"></div></div><span class="skill-pct">85%</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-header reveal-up"><span class="section-tag">What I Offer</span><h2 class="section-title">My Services</h2></div>
+        <div class="services-grid">
+          <div class="service-card reveal-up" style="--delay:.05s"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3 class="service-title">Web Development</h3><p class="service-desc">Modern, responsive websites crafted with clean code and stunning visuals. From landing pages to full portfolios — built to perform and convert.</p></div>
+          <div class="service-card reveal-up" style="--delay:.1s"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div><h3 class="service-title">Graphic Design</h3><p class="service-desc">Eye-catching brand identities, marketing materials, social media content, and logos. Every pixel placed with purpose to elevate your brand.</p></div>
+          <div class="service-card reveal-up" style="--delay:.15s"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="service-title">Cyber Security</h3><p class="service-desc">Security assessments, network hardening, and penetration testing. I help you identify vulnerabilities before attackers do.</p></div>
+        </div>
+        <div class="section-cta-wrap reveal-up"><a href="#contact" class="btn btn-outline">Let's Work Together <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- INTERACTIVE TERMINAL -->
+    <section class="section terminal-section" id="terminal">
+      <div class="container">
+        <div class="section-header reveal-up"><span class="section-tag">Try It</span><h2 class="section-title">Interactive Terminal</h2></div>
+        <div class="terminal-wrap reveal-scale">
+          <div class="terminal-window" style="position:relative">
+            <div class="terminal-scanline"></div>
+            <div class="terminal-titlebar">
+              <span class="terminal-dot terminal-dot-red"></span>
+              <span class="terminal-dot terminal-dot-yellow"></span>
+              <span class="terminal-dot terminal-dot-green"></span>
+              <span class="terminal-title">omar@kali:~</span>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+              <div class="terminal-line output" style="color:var(--text-muted)">Welcome to Omar's terminal. Type <span style="color:var(--accent)">help</span> for commands.</div>
+            </div>
+            <div style="padding:0 24px 16px">
+              <div class="terminal-input-wrap">
+                <span class="terminal-input-prompt">$ </span>
+                <input type="text" class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" aria-label="Terminal command input">
+                <span class="terminal-cursor-blink" id="terminalCursor"></span>
+              </div>
+            </div>
+          </div>
+          <p class="terminal-hint reveal-up">Type a command and press Enter &bull; Try: whoami, skills, contact, help</p>
+        </div>
+        <div class="section-cta-wrap reveal-up"><a href="#contact" class="btn btn-primary btn-sm">Hire Me <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-header reveal-up"><span class="section-tag">My Work</span><h2 class="section-title">Graphic Projects</h2></div>
+     <div class="gallery-grid reveal-up" id="galleryGrid"></div>
+      </div>
+    </section>
+
+
+
+    <div class="section-separator"></div>
+
+    <!-- EXPERIENCE -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section-header reveal-up"><span class="section-tag">My Journey</span><h2 class="section-title">Experience &amp; Education</h2></div>
+        <div class="timeline"><div class="timeline-line"></div>
+          <div class="timeline-item timeline-item-left reveal-left"><div class="timeline-dot"></div><div class="timeline-card"><span class="timeline-date">2022 &mdash; 2027</span><h3 class="timeline-title">B.Sc. Electrical Engineering</h3><p class="timeline-desc">Specializing in Communications and Electronics at Horus University. Comprehensive knowledge in signal processing, networking, circuit design, and embedded systems.</p><div class="timeline-tags"><span>Communications</span><span>Electronics</span><span>Networking</span></div></div></div>
+          <div class="timeline-item timeline-item-right reveal-right"><div class="timeline-dot"></div><div class="timeline-card"><span class="timeline-date">2024 &mdash; Present</span><h3 class="timeline-title">Freelance Graphic Designer</h3><p class="timeline-desc">Designed marketing materials, branding packages, and social media content for clients in restaurant and fashion industries. Consistently delivering under tight deadlines.</p><div class="timeline-tags"><span>Branding</span><span>Posters</span><span>Social Media</span></div></div></div>
+          <div class="timeline-item timeline-item-left reveal-left"><div class="timeline-dot"></div><div class="timeline-card"><span class="timeline-date">2023 &mdash; Present</span><h3 class="timeline-title">Networking &amp; Infrastructure</h3><p class="timeline-desc">Building practical skills through CCNA curriculum and Packet Tracer. Designing LAN/WAN topologies, configuring routers/switches, VLANs, ACLs, and troubleshooting.</p><div class="timeline-tags"><span>CCNA</span><span>Packet Tracer</span><span>Routing</span></div></div></div>
+          <div class="timeline-item timeline-item-right reveal-right"><div class="timeline-dot"></div><div class="timeline-card"><span class="timeline-date">2025 &mdash; Present</span><h3 class="timeline-title">Cyber Security — eJPTv2</h3><p class="timeline-desc">Studying eLearnSecurity Junior Penetration Tester certification. Hands-on with Nmap, Burp Suite, Metasploit, vulnerability assessment, and ethical hacking methodologies.</p><div class="timeline-tags"><span>Pen Testing</span><span>eJPTv2</span><span>Ethical Hacking</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- STATS -->
+    <section class="section stats" id="stats">
+      <div class="container">
+        <div class="section-header reveal-up"><span class="section-tag">Numbers Speak</span><h2 class="section-title">By The Numbers</h2></div>
+        <div class="stats-grid">
+          <div class="stat-card reveal-up" style="--delay:.05s"><div class="stat-number"><span class="counter" data-target="30">0</span>+</div><p class="stat-label">Projects Completed</p></div>
+          <div class="stat-card reveal-up" style="--delay:.1s"><div class="stat-number"><span class="counter" data-target="500">0</span>+</div><p class="stat-label">Hours of Experience</p></div>
+          <div class="stat-card reveal-up" style="--delay:.15s"><div class="stat-number"><span class="counter" data-target="15">0</span>+</div><p class="stat-label">Clients Worked With</p></div>
+          <div class="stat-card reveal-up" style="--delay:.2s"><div class="stat-number"><span class="counter" data-target="3">0</span></div><p class="stat-label">Certifications in Progress</p></div>
+        </div>
+        <div class="section-cta-wrap reveal-up"><a href="#contact" class="btn btn-primary btn-sm">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+      </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- LEAD MAGNET -->
+    <section class="section lead-magnet" id="lead-magnet">
+      <div class="container">
+        <div class="lead-card reveal-scale">
+          <div class="lead-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <h3 class="lead-title">Not Sure Where to Start?</h3>
+          <p class="lead-desc">Get a free 30-minute consultation to discuss your project. I'll review your needs and provide actionable recommendations — no strings attached.</p>
+          <div id="leadFormWrap">
+            <form class="lead-form" id="leadForm">
+              <input type="email" class="lead-input" placeholder="Enter your email address" required aria-label="Email for free consultation">
+              <button type="submit" class="btn btn-primary">Book Free Consultation</button>
+            </form>
+            <p class="lead-note">No spam, just a real conversation about your project.</p>
+          </div>
+          <div class="lead-success" id="leadSuccess">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="40" height="40" style="color:var(--success);margin-bottom:12px"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <p>You're all set! I'll reach out within 24 hours to schedule your consultation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-header reveal-up"><span class="section-tag">Let's Connect</span><h2 class="section-title">Get In Touch</h2></div>
+        <div class="contact-grid">
+          <div class="contact-info reveal-left">
+            <p class="contact-intro">Have a project in mind or want to collaborate? Fill out the form or reach out directly. I respond to every message within 24 hours.</p>
+            <div class="contact-details">
+              <a href="https://instagram.com/omarshehata_designs26" target="_blank" rel="noopener" class="contact-detail-item"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div><div><span class="contact-detail-label">Instagram</span><span class="contact-detail-value">@omarshehata_designs26</span></div></a>
+              <a href="mailto:oshehata925@gmail.com" class="contact-detail-item"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><span class="contact-detail-label">Email</span><span class="contact-detail-value">oshehata925@gmail.com</span></div></a>
+              <a href="https://linkedin.com/in/omar-shehata-020bab344" target="_blank" rel="noopener" class="contact-detail-item"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><div><span class="contact-detail-label">LinkedIn</span><span class="contact-detail-value">omar-shehata-020bab344</span></div></a>
+            </div>
+            <div class="contact-socials">
+              <a href="https://behance.net/omarshehata14" target="_blank" rel="noopener" class="contact-detail-item"><div class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg></div><div><span class="contact-detail-label">Behance</span><span class="contact-detail-value">omarshehata14</span></div></a>
+            </div>
+          </div>
+          <!-- CONTACT FORM -->
+          <div class="form-card reveal-right">
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group"><label class="form-label" for="formName">Name</label><input type="text" id="formName" class="form-input" placeholder="Your name" required></div>
+                <div class="form-group"><label class="form-label" for="formEmail">Email</label><input type="email" id="formEmail" class="form-input" placeholder="your@email.com" required></div>
+              </div>
+              <div class="form-group"><label class="form-label" for="formSubject">Service Needed</label>
+                <select id="formSubject" class="form-select" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="Graphic Design">Graphic Design</option>
+                  <option value="Cyber Security">Cyber Security</option>
+                  <option value="Networking">Networking Setup</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group"><label class="form-label" for="formMessage">Message</label><textarea id="formMessage" class="form-textarea" placeholder="Tell me about your project..." required></textarea></div>
+              <button type="submit" class="btn btn-primary btn-full form-submit" id="formSubmitBtn">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+              <div class="form-reply-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> I'll reply within 24 hours</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+<!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">O<span class="logo-accent">S</span></div>
+        <p class="footer-text">Crafting secure, modern, and visually compelling digital solutions.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/omarshehata_11" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://linkedin.com/in/omar-shehata-020bab344" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://behance.net/omarshehata14" target="_blank" rel="noopener" aria-label="Behance"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.021h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zM3 11h3.584c2.508 0 2.906-3-.312-3H3v3zm3.391 3H3v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/></svg></a>
+        </div>
+        <p class="footer-copy">&copy; 2025 Omar Mohamed Shehata. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GALLERY MODAL -->
+  <div class="gallery-modal" id="galleryModal">
+    <div class="gallery-backdrop" id="galleryBackdrop"></div>
+    <div class="gallery-container">
+      <button class="gallery-close" id="galleryClose" aria-label="Close gallery">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="gallery-header">
+        <div class="gallery-header-info">
+          <span class="gallery-cat" id="galleryCat"></span>
+          <h3 class="gallery-title" id="galleryTitle"></h3>
+        </div>
+        <span class="gallery-counter" id="galleryCounter"></span>
+      </div>
+      <div class="gallery-viewport" id="galleryViewport">
+        <button class="gallery-arrow gallery-prev arrow-hidden" id="galleryPrev" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="22" height="22"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="gallery-image-wrap">
+          <img class="gallery-image" id="galleryImage" src="" alt="">
+        </div>
+        <button class="gallery-arrow gallery-next arrow-hidden" id="galleryNext" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="22" height="22"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+      <div class="gallery-desc" id="galleryDesc"></div>
+      <div class="gallery-thumbs" id="galleryThumbs"></div>
+    </div>
+  </div>
+
+ 
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <svg id="toastIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <span id="toastMessage"></span>
+  </div>
+
+  <!-- SCROLL TOP -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  </a>
+
+<script>
+/* ========== HELPERS ========== */
+var $=function(s){return document.querySelector(s)},$$=function(s){return document.querySelectorAll(s)};
+
+/* ========== PROJECTS DATA ========== */
+var projects=[
+  
+   {title:"Cosmetics Brand Identity",filter:"Design",tags:["Design","Branding","Cosmetics"],
+   cover:"https://z-cdn-media.chatglm.cn/files/fe69b9f5-785e-45bd-b13d-2d8db9ea0b08.png?auth_key=1878583824-86df765e937d490882360143dd2de965-0-0144cfc2b27bdfa355c1830c831b4359",
+   images:["https://z-cdn-media.chatglm.cn/files/fe69b9f5-785e-45bd-b13d-2d8db9ea0b08.png?auth_key=1878583824-86df765e937d490882360143dd2de965-0-0144cfc2b27bdfa355c1830c831b4359","https://z-cdn-media.chatglm.cn/files/fabd2632-6869-4a9f-b2cd-a125b6492020.png?auth_key=1878583824-6a423d9a52d74211a282688f4a7da4f1-0-f28077b4c95a87169e2a1e7de636b9ab","https://z-cdn-media.chatglm.cn/files/1753222e-6128-44a9-acd3-9788159f2c6c.jpg?auth_key=1878583824-515efb71f27e4235950b936c26ebb2ff-0-c121daa7710cbf1c2d2cd9f241c1a58f","https://z-cdn-media.chatglm.cn/files/2fe739ff-23a6-4297-9bda-185259f4dfa8.jpg?auth_key=1878583824-e0d86eb571f745a4aa850a1cb3459e1c-0-ddfcb6987d3b6f8749f019888c25f40f","https://z-cdn-media.chatglm.cn/files/c3e9dfdb-e8bc-49ec-93d2-f82cd406f3c0.jpg?auth_key=1878583824-949f77cce77c43679f4a97c45eaa5b31-0-5f67595ddb810206c2484f2728da835e","https://z-cdn-media.chatglm.cn/files/fb50a138-ca52-42ad-8eaf-277f05c51999.jpg?auth_key=1878583824-d7f4c6b7160741dfbeb3469695de8bf6-0-b724259c1e2ecf04144b2e99edc257a8","https://z-cdn-media.chatglm.cn/files/a83bab7d-7f08-4c99-b837-eff030623e10.jpg?auth_key=1878583824-d2d478cb5564454fba02dcb0a2d3d17f-0-f963c74c0aa3668dcbc6cb9b50f13a72","https://z-cdn-media.chatglm.cn/files/df017929-9f6a-41c9-a2d8-b3a9db73cf3e.png?auth_key=1878583824-cf75840bb65f4245a75519e8fb400f7c-0-3b02dd66acc3179c78c7f35cbe7e25df"],
+   desc:"Complete brand identity and packaging design for a cosmetics brand including logo variations, color palette, shopping bags, and product mockups.",
+   problem:"Cosmetics brand needed a complete visual identity system — from logo to packaging to product mockups — that conveyed elegance and consistency across all touchpoints.",
+   solution:"Designed full brand system with two logo variations, curated color palette, shopping bag mockups, and multiple product packaging applications maintaining cohesive visual language.",
+   tools:["Photoshop","Illustrator"],result:"8 deliverables covering full brand identity — logo, palette, bags, bottles, and scene compositions."},
+   {title:"PSYERA — Mental Health Intelligence",filter:"Design",tags:["Design","Branding","App","Tech"],
+   cover:"https://z-cdn-media.chatglm.cn/files/e83beac7-5f78-4675-b294-e18a8a46f074.png?auth_key=1877212336-b14acdece4694cea992928e0cc386d5a-0-dc0b39b66b40555fd9db8d8df58656c6",
+   images:["https://z-cdn-media.chatglm.cn/files/e83beac7-5f78-4675-b294-e18a8a46f074.png?auth_key=1877212336-b14acdece4694cea992928e0cc386d5a-0-dc0b39b66b40555fd9db8d8df58656c6","https://z-cdn-media.chatglm.cn/files/4ce79688-ff99-4717-8c33-7bc5491cfcda.png?auth_key=1877212336-3f479d9a449b4bcc946403a143bb289e-0-ed62d12dbf96d3ecfd27677dcb63ca37","https://z-cdn-media.chatglm.cn/files/5163bea9-34e6-49a6-bcd3-d4a67eeb9e46.png?auth_key=1878585893-70bb48a2a348469d98119246b3ef9606-0-998780878e01aeee2e9de3b3da7b9ed1","https://z-cdn-media.chatglm.cn/files/459e45b7-69b8-4bef-9e18-34c32e54d542.jpg?auth_key=1878585893-68338970a59e4665a6a2fa9bff797c28-0-29385d3aaba8f9e102ff271849a3491a","https://z-cdn-media.chatglm.cn/files/b3239184-7af9-4983-b8d6-f8889da9c06b.png?auth_key=1878585893-f35c6be1f02d4683969bf3311fbcccb8-0-fa2a014fc30069fcac59b6de89daafac","https://z-cdn-media.chatglm.cn/files/1783edb5-a82c-40e5-8e62-1f728b6ba3a7.png?auth_key=1878585893-0039c63d5a8f4d258012a42b79a0d5d0-0-b9b32880440671a2b56f7e2ad5e8f65b","https://z-cdn-media.chatglm.cn/files/2b2c03d8-4e71-40fd-bca1-f4c94a4cac77.png?auth_key=1878585893-c48b4d1c1e4d48a08b96825c4dc7138c-0-b6c9979cd0cef6c12b0e801a9f165061"],
+   desc:"Complete brand identity and app advertisement for PSYERA — an AI-driven mental health intelligence platform combining psychology with technology.",
+   problem:"PSYERA needed a comprehensive visual identity that could communicate the fusion of artificial intelligence and mental health — a sensitive subject requiring trust, innovation, and warmth simultaneously. Additionally needed user acquisition creatives for app launch.",
+   solution:"Developed a symbolic logo system: a human head silhouette representing cognition and identity; concentric circular waves symbolizing data processing and mind layers; an orange core representing consciousness and intelligence. Created logo variations across 4 different backgrounds, dark and light versions, abstract composition, and app mockup ads with clean UI showcases.",
+   tools:["Illustrator","Photoshop","Figma"],result:"Complete brand identity delivered — 7 deliverables covering brand presentation, 4 logo background variations, dark/light versions, abstract composition, and app ad creatives."},
+   {title:"Feelix Branding",filter:"Design",tags:["Design","Branding"],
+   cover:"https://z-cdn-media.chatglm.cn/files/a99697a6-de37-4f2a-a48a-ad9671bd9b72.png?auth_key=1877216063-78a08c3a208946e38a46d5323dc1ad77-0-9092781295eaaf9f3637b83d4d92d7ef",
+   images:["https://z-cdn-media.chatglm.cn/files/a99697a6-de37-4f2a-a48a-ad9671bd9b72.png?auth_key=1877216063-78a08c3a208946e38a46d5323dc1ad77-0-9092781295eaaf9f3637b83d4d92d7ef","https://z-cdn-media.chatglm.cn/files/98b48e07-cb0c-48b2-97dc-8916d6a4a787.png?auth_key=1878586517-7f4aaa7020e74ee0896ccb1036605f6c-0-cbf2377b00b983246e35a391b5cfdf31","https://z-cdn-media.chatglm.cn/files/dcea1464-8e04-4e7a-a94e-22ae9eb23e65.png?auth_key=1878586517-bf71da8a21e44b7283a140462f716a8f-0-ec65656e357c754991840751f1d7c51b","https://z-cdn-media.chatglm.cn/files/b9e6edd2-343b-410d-923b-dafe06420832.png?auth_key=1878586517-1e2be30f09b34196852549e3b2b2f3a2-0-f750d0e22b124f43579a763276fbc2a8","https://z-cdn-media.chatglm.cn/files/81f45287-73ac-44ff-a255-f77111337556.png?auth_key=1878586517-e0c98e631d91431f99e814e5b360e200-0-91592a4f1d914fc7fd52bcead1767d26","https://z-cdn-media.chatglm.cn/files/9fe69d2f-a73c-444f-8a7d-d8b5b4466a90.png?auth_key=1878586517-aea338348ecd4396acd7d779cda207cb-0-36970bd2f534e1b9c7ad9b84cdcd1901","https://z-cdn-media.chatglm.cn/files/b6dc2126-895f-46ae-a856-f71491e82a50.png?auth_key=1878586517-81b9e70758554c47ac6676ff09e0935e-0-6dd028629bfbee777946e24bb49b6ad7","https://z-cdn-media.chatglm.cn/files/7e1c3b6e-34c0-4370-b4f7-87c23265bcdb.png?auth_key=1878586517-844c4ca4fdd2409b93dafc872387384f-0-9830710b0386e47f1fc8083656b8f6e4"],
+   desc:"Brand identity guidelines for Feelix.",coverPos:"center center",
+   problem:"Company needed comprehensive brand guidelines to ensure consistency across a growing team and multiple vendors.",
+   solution:"Created detailed brand book with office scene mockups, stationery design, and environmental branding applications.",
+   tools:["Illustrator","Photoshop","InDesign"],result:"Brand guidelines became the internal standard — all external communications now consistent."},
+  {title:"Coach JANA RAMY — Swimming Academy",filter:"Design",tags:["Design","Branding","Sports"],
+   cover:"https://z-cdn-media.chatglm.cn/files/4f7f8e07-a13e-4acc-ba49-cabd4f0f30b8.jpg?auth_key=1877212336-3dd2b350c7a24bfb80f17d8c7ae9a065-0-ead08fd5729984960220f9ef31e5d1b3",
+   images:["https://z-cdn-media.chatglm.cn/files/4f7f8e07-a13e-4acc-ba49-cabd4f0f30b8.jpg?auth_key=1877212336-3dd2b350c7a24bfb80f17d8c7ae9a065-0-ead08fd5729984960220f9ef31e5d1b3","https://z-cdn-media.chatglm.cn/files/e44a3b10-4ba3-4616-9b0c-c5a134028ac6.jpg?auth_key=1877212336-6b549a1408c0405f9071f4fc9a9fb07e-0-ac7803ae1ceb9b595014e55e4026542d"],
+   desc:"Complete branding and promotional design for Coach JANA RAMY swimming academy — logo and seasonal ad campaign.",
+   problem:"Swimming coach needed a professional brand mark and promotional materials to establish credibility and drive enrollment.",
+   solution:"Designed a dynamic logo combining water elements with athletic energy, followed by seasonal promotional ads with professional photo manipulation.",
+   tools:["Illustrator","Photoshop"],result:"Academy enrollment increased 20% after rebrand, and summer ads exceeded target by 30%."},
+    {title:"RAWNAQ Branding",filter:"Design",tags:["Design","Branding"],
+   cover:"https://z-cdn-media.chatglm.cn/files/912c063c-ad9c-4034-b5de-9bd25e0a0dbc.jpg?auth_key=1877212336-1b6fa66427e44a6da3c5fbca9f3d7a56-0-faba255373f9c9d540449fd24fb6f6c6",
+   images:["https://z-cdn-media.chatglm.cn/files/912c063c-ad9c-4034-b5de-9bd25e0a0dbc.jpg?auth_key=1877212336-1b6fa66427e44a6da3c5fbca9f3d7a56-0-faba255373f9c9d540449fd24fb6f6c6"],
+   desc:"Brand identity for RAWNAQ — culturally-rooted visual system.",
+   problem:"Brand needed to balance cultural heritage with contemporary design to appeal to modern consumers.",
+   solution:"Created a visual system harmonizing traditional patterns with modern minimalism — logo, palette, and applications.",
+   tools:["Illustrator","Photoshop"],result:"Client praised the cultural authenticity — brand launched to strong positive reception."},
+   {title:"N'ONA Fashion",filter:"Design",tags:["Design","Branding","Fashion"],
+   cover:"https://z-cdn-media.chatglm.cn/files/f2ebd572-2434-4639-8f30-f8107d32942e.png?auth_key=1875420399-234fba357d5747f8b8a4e0f4ed889c21-0-94643945f7987e6f060895c62b79e627",
+   images:["https://z-cdn-media.chatglm.cn/files/f2ebd572-2434-4639-8f30-f8107d32942e.png?auth_key=1875420399-234fba357d5747f8b8a4e0f4ed889c21-0-94643945f7987e6f060895c62b79e627"],
+   desc:"Complete brand identity for a fashion label.",
+   problem:"Fashion label needed a complete visual system from scratch — no existing brand guidelines or assets.",
+   solution:"Delivered full identity: logo, color palette, typography system, pattern library, and comprehensive brand guidelines.",
+   tools:["Illustrator","Photoshop","InDesign"],result:"Brand identity used across all touchpoints — social, packaging, and retail displays."},
+     {title:"Coffee Logos",filter:"Design",tags:["Design","Branding","Coffee"],
+   cover:"https://z-cdn-media.chatglm.cn/files/fb7d5992-483a-4613-874b-8d97a5af3840.jpg?auth_key=1877216063-01eb7e34b9804dccbc740ff413f9d273-0-b16a56482429f83072dccba86ad545a3",
+   images:["https://z-cdn-media.chatglm.cn/files/12f30ab2-e9a9-4c48-bba4-99a4fe7d3a14.jpg?auth_key=1875423326-8c812f8b04ea46a789a0aebe66ee23c4-0-81aa2e98b05207eef05bfb9d846e72be","https://z-cdn-media.chatglm.cn/files/5d2450be-87bb-494f-aa0b-3766ecd30e09.jpg?auth_key=1875420399-46fcf87faa144919b82ba0bd9bc7c4e0-0-d56a2bf30fb48446f9d5d291bd6c38df","https://z-cdn-media.chatglm.cn/files/fb7d5992-483a-4613-874b-8d97a5af3840.jpg?auth_key=1877216063-01eb7e34b9804dccbc740ff413f9d273-0-b16a56482429f83072dccba86ad545a3"],
+   desc:"Collection of coffee brand logos — from minimalist marks to playful mascots.",coverPos:"center center",
+   problem:"Three different coffee businesses each needed a unique visual identity that reflected their distinct brand personalities.",
+   solution:"Coffee Bean: Warm minimalist mark with organic tones. Piano Cafe: Elegant merge of piano keys with coffee cup. MR. COFFEE: Playful anthropomorphic mascot from stacked coffee cups.",
+   tools:["Illustrator","Photoshop"],result:"Three distinct logos for three unique brands — each with strong recognition in their market."},
+{title:"BOBI CAFE Branding",filter:"Design",tags:["Design","Branding","Food"],
+   cover:"https://z-cdn-media.chatglm.cn/files/04572c77-e8c5-48de-98c0-f312cfd50bc4.png?auth_key=1878590199-dc5266dc708d4daaacc90142b8320636-0-b52c6cfc1cbdd55ea62e2e1010ac3291",
+   images:["https://z-cdn-media.chatglm.cn/files/04572c77-e8c5-48de-98c0-f312cfd50bc4.png?auth_key=1878590199-dc5266dc708d4daaacc90142b8320636-0-b52c6cfc1cbdd55ea62e2e1010ac3291"],
+   desc:"Brand identity for BOBI CAFE featuring a lovable bear mascot character.",
+   problem:"Café needed a friendly, memorable brand identity with a mascot that could appeal to families and create emotional connection.",
+   solution:"Designed a charming dark green bear mascot holding a wine glass, paired with bold red typography — creating a unique, warm brand personality that stands out in the café market.",
+   tools:["Illustrator","Photoshop"],result:"Brand identity launched successfully — mascot became instantly recognizable and shareable on social media."},
+   {title:"Donuts Campaign",filter:"Design",tags:["Design","Marketing","Food"],
+   cover:"https://z-cdn-media.chatglm.cn/files/72f3a900-f028-4fcc-93cc-8267d0f731f8.png?auth_key=1875420399-c6a06b9f22c74f91aab6f599f6cf693a-0-c930e6bc2d8a8928fc3c45aac1ad417d",
+   images:["https://z-cdn-media.chatglm.cn/files/72f3a900-f028-4fcc-93cc-8267d0f731f8.png?auth_key=1875420399-c6a06b9f22c74f91aab6f599f6cf693a-0-c930e6bc2d8a8928fc3c45aac1ad417d","https://z-cdn-media.chatglm.cn/files/3948e305-0286-4f28-82e0-990f7968ff75.jpg?auth_key=1878590199-9fdb7501053f4a32811b1bbc0ba5677b-0-da249435dfe6c0408074805118a44827"],
+   desc:"Eye-catching marketing campaign for a donut brand with vibrant visuals and playful mascot design.",
+   problem:"The brand had no visual identity for social media and was struggling to stand out in a crowded food market.",
+   solution:"Designed a complete campaign with vibrant color palette, appetizing compositions, DR DONUTS mascot character, and consistent branding across all platforms.",
+   tools:["Photoshop","Illustrator"],result:"Increased social media engagement by 40% within the first month of launch."},
+  {title:"Pizza Restaurant",filter:"Design",tags:["Design","Food"],
+   cover:"https://z-cdn-media.chatglm.cn/files/9f52d2a6-8eaa-4805-861d-16234d2b8ec9.png?auth_key=1875420399-9b6a5d82a5394185bdedaaffa812a9de-0-b6db37da9818389fbb00546a15329095",
+   images:["https://z-cdn-media.chatglm.cn/files/9f52d2a6-8eaa-4805-861d-16234d2b8ec9.png?auth_key=1875420399-9b6a5d82a5394185bdedaaffa812a9de-0-b6db37da9818389fbb00546a15329095"],
+   desc:"Promotional poster design for a pizza restaurant with bold typography.",
+   problem:"Restaurant needed professional marketing materials to compete with established chains in the local area.",
+   solution:"Crafted bold, mouth-watering poster designs with strategic typography hierarchy and food photography styling.",
+   tools:["Photoshop"],result:"Client reported a 25% increase in delivery orders after poster distribution."},
+  {title:"7DCGS Identity",filter:"Design",tags:["Design","Branding","Tech"],
+   cover:"https://z-cdn-media.chatglm.cn/files/110e1cef-096c-4987-9a26-07a9bd4033bb.jpg?auth_key=1875420399-5b67601f99d34eddab076ac856cd1487-0-4e88f275299b00d7c552fc31cf259180",
+   images:["https://z-cdn-media.chatglm.cn/files/110e1cef-096c-4987-9a26-07a9bd4033bb.jpg?auth_key=1875420399-5b67601f99d34eddab076ac856cd1487-0-4e88f275299b00d7c552fc31cf259180"],
+   desc:"Professional logo and identity for a tech organization.",
+   problem:"Organization lacked a cohesive visual identity that could communicate trust and technological competence.",
+   solution:"Developed a clean geometric logo with a structured color system communicating precision and innovation.",
+   tools:["Illustrator"],result:"Identity adopted across digital and print materials — improved professional perception."},
+  {title:"Fluffito Mascot",filter:"Design",tags:["Design","Branding","Character"],
+   cover:"https://z-cdn-media.chatglm.cn/files/62032d14-e051-4e32-aa5a-10b15a246575.jpg?auth_key=1875420399-2a27d6a0cb89453a917022cf16f20fb3-0-4752bd9ea01f47742b22f011f5ac9ed0",
+   images:["https://z-cdn-media.chatglm.cn/files/62032d14-e051-4e32-aa5a-10b15a246575.jpg?auth_key=1875420399-2a27d6a0cb89453a917022cf16f20fb3-0-4752bd9ea01f47742b22f011f5ac9ed0"],
+   desc:"Custom mascot character for the Fluffito brand.",
+   problem:"Brand needed a relatable character to build emotional connection with younger target audience.",
+   solution:"Designed a playful, approachable mascot with distinct personality traits and versatile pose variations for different contexts.",
+   tools:["Photoshop","Illustrator"],result:"Mascot became the face of the brand — used in packaging, social media, and merchandise."},
+   {title:"ARTAL Campaign",filter:"Design",tags:["Design","Advertising"],
+   cover:"https://z-cdn-media.chatglm.cn/files/19798bc6-5a82-49bc-a03e-ca5525eac2a1.jpg?auth_key=1875420399-07d8ccaeffbd468db894052e8d9115f5-0-91ce9e61651f297c66e07cb5d45e3089",
+   images:["https://z-cdn-media.chatglm.cn/files/19798bc6-5a82-49bc-a03e-ca5525eac2a1.jpg?auth_key=1875420399-07d8ccaeffbd468db894052e8d9115f5-0-91ce9e61651f297c66e07cb5d45e3089"],
+   desc:"Professional ad campaign for ARTAL brand.",
+   problem:"Brand needed high-converting ad creatives for a product launch campaign with tight deadline.",
+   solution:"Designed strategic visuals with compelling hierarchy and persuasive messaging optimized for multiple ad platforms.",
+   tools:["Photoshop"],result:"Campaign achieved 3x higher click-through rate compared to previous creatives."},
+   {title:"Red Bull Boxing",filter:"Design",tags:["Design","Advertising","Creative"],
+     cover:"https://z-cdn-media.chatglm.cn/files/a6f4507b-d2ef-4321-b439-460fdd2f4d40.jpg?auth_key=1877212336-96beb863ab3e42ada5f167e775673d5b-0-3a4924cc66ed5adf5597d2f1af57da63",
+   images:["https://z-cdn-media.chatglm.cn/files/a6f4507b-d2ef-4321-b439-460fdd2f4d40.jpg?auth_key=1877212336-96beb863ab3e42ada5f167e775673d5b-0-3a4924cc66ed5adf5597d2f1af57da63"],
+   desc:"Creative Red Bull x Boxing concept ad.",
+   problem:"Conceptual project exploring how Red Bull's brand energy could translate to combat sports advertising.",
+   solution:"High-impact visual narrative merging Red Bull's dynamic identity with boxing intensity through compositing and color grading.",
+   tools:["Photoshop"],result:"Portfolio piece — received strong positive feedback from design community."},
+  {title:"SCOOTER Logo",filter:"Design",tags:["Design","Branding"],
+   cover:"https://z-cdn-media.chatglm.cn/files/67bc66c1-45c0-42b9-babd-93e5fdb20af0.jpg?auth_key=1877212336-8122b95a82194db09daf754e32e27a62-0-22db77646fd63ed8ed96dac420bc4ee2",
+   images:["https://z-cdn-media.chatglm.cn/files/67bc66c1-45c0-42b9-babd-93e5fdb20af0.jpg?auth_key=1877212336-8122b95a82194db09daf754e32e27a62-0-22db77646fd63ed8ed96dac420bc4ee2"],
+   desc:"Modern logo for SCO_OER organization.",
+   problem:"Organization needed a mark communicating innovation and professionalism for educational resource platform.",
+   solution:"Clean geometric logo with modular elements suggesting connectivity and structured learning.",
+   tools:["Illustrator"],result:"Logo deployed across web platform and printed materials — strong brand recognition achieved."},
+  {title:"Cyber Wolf Logo",filter:"Design",tags:["Design","Branding","Security"],
+   cover:"https://z-cdn-media.chatglm.cn/files/71be84a8-5526-416b-9d96-bde8b6b7de44.jpg?auth_key=1877212336-67993ff6c2804ac89cac2966d56c1ca7-0-8d70645501aae52e4056b1cd30351e32",
+   images:["https://z-cdn-media.chatglm.cn/files/71be84a8-5526-416b-9d96-bde8b6b7de44.jpg?auth_key=1877212336-67993ff6c2804ac89cac2966d56c1ca7-0-8d70645501aae52e4056b1cd30351e32"],
+   desc:"Powerful logo for a cybersecurity company.",
+   problem:"Cybersecurity startup needed a commanding brand mark conveying strength and digital vigilance.",
+   solution:"Combined fierce red wolf imagery with digital circuit motifs in a powerful, scalable logo composition.",
+   tools:["Illustrator","Photoshop"],result:"Logo became the core of brand identity — client received multiple partnership inquiries after launch."},
+  {title:"SLOW Typography",filter:"Design",tags:["Design","Typography","Creative"],
+   cover:"https://z-cdn-media.chatglm.cn/files/415d7d73-228b-4270-b9c6-55d796f71291.jpg?auth_key=1877212336-7440f12959fb4362a33ecf366474550a-0-0aae20a8ff81a4b1eadcbffcecf34ef2",
+   images:["https://z-cdn-media.chatglm.cn/files/415d7d73-228b-4270-b9c6-55d796f71291.jpg?auth_key=1877212336-7440f12959fb4362a33ecf366474550a-0-0aae20a8ff81a4b1eadcbffcecf34ef2"],
+   desc:"Experimental typography exploring the concept of slowness.",
+   problem:"Personal experimental project exploring how typography can convey abstract concepts like time and pace.",
+   solution:"Expressive letterforms with texture and deliberate visual weight to create a meditative, slow-reading experience.",
+   tools:["Photoshop","Illustrator"],result:"Featured in design community shares — sparked discussion on typographic emotion."},
+    {title:"War Poetry",filter:"Design",tags:["Design","Art","Creative"],
+   cover:"https://z-cdn-media.chatglm.cn/files/e32ad7d1-da63-4362-8b6a-94a76bcfc570.jpg?auth_key=1877216063-72e77b8b7eb642039a8d1ad6fdf06a5f-0-8b99058e5476099f5a483ddfb58dfad9",
+   images:["https://z-cdn-media.chatglm.cn/files/e32ad7d1-da63-4362-8b6a-94a76bcfc570.jpg?auth_key=1877216063-72e77b8b7eb642039a8d1ad6fdf06a5f-0-8b99058e5476099f5a483ddfb58dfad9"],
+   desc:"Dark-themed artwork combining war imagery with Arabic poetry.",coverPos:"center top",
+   problem:"Artistic piece exploring how visual design can amplify the emotional weight of written poetry about conflict.",
+   solution:"Cinematic compositing with battlefield imagery, Arabic calligraphy integration, and dramatic color grading for emotional impact.",
+   tools:["Photoshop"],result:"Emotional response piece — widely shared in Arabic design communities for its powerful storytelling."},
+  {title:"SUITS Gentleman",filter:"Design",tags:["Design","Branding","Fashion"],
+   cover:"https://z-cdn-media.chatglm.cn/files/bbba4a16-e579-4cf1-959a-63ae39752c89.jpg?auth_key=1877216063-cea5619e32e84e00b04357d2e5b727c1-0-94878bbe42cb08f0547bde6c8cc17b31",
+   images:["https://z-cdn-media.chatglm.cn/files/bbba4a16-e579-4cf1-959a-63ae39752c89.jpg?auth_key=1877216063-cea5619e32e84e00b04357d2e5b727c1-0-94878bbe42cb08f0547bde6c8cc17b31"],
+   desc:"Minimalist logo for men's formal wear brand.",coverPos:"center center",
+   problem:"Men's fashion brand needed a sophisticated mark conveying class and exclusivity without being overly ornate.",
+   solution:"Clever suit silhouette with integrated tie-letterform and 'GENTLE MAN' tagline in refined, minimal composition.",
+   tools:["Illustrator"],result:"Brand perceived as premium — client attributed 15% price premium acceptance to the logo design."},
+     {title:"Work Hard Campaign",filter:"Design",tags:["Design","Typography","Creative"],
+   cover:"https://z-cdn-media.chatglm.cn/files/14d387a3-5ef6-4351-a1f3-1efa670d7ede.jpg?auth_key=1878590199-16da262e4c3249658df8c123b5c5db5d-0-58e2c2026f512da2d6e55c9568c3519e",
+   images:["https://z-cdn-media.chatglm.cn/files/14d387a3-5ef6-4351-a1f3-1efa670d7ede.jpg?auth_key=1878590199-16da262e4c3249658df8c123b5c5db5d-0-58e2c2026f512da2d6e55c9568c3519e","https://z-cdn-media.chatglm.cn/files/74a6e145-5873-4772-bbcf-a477505c9e5d.jpg?auth_key=1878590199-9392823e9f544e2098cd88e4c01d5598-0-10458959f7b5315ea9546546e890df20"],
+   desc:"Creative typography campaign exploring the concept of hard work and success through visual storytelling.",
+   problem:"Brand needed motivational campaign materials that could resonate with young professionals and students.",
+   solution:"Designed two complementary visuals — one minimalist black & white with integrated illustration of a figure carrying weight, and one vibrant orange version with emphasis typography — creating a cohesive campaign system.",
+   tools:["Photoshop","Illustrator"],result:"Campaign achieved strong engagement across social media platforms and was widely shared as motivational content."},
+   {title:"Wedding Invitation",filter:"Design",tags:["Design","Print","Art"],
+   cover:"https://z-cdn-media.chatglm.cn/files/1d611d25-260b-42ad-9979-93c3fefdcaef.png?auth_key=1877216063-3b71059264fd4c4d90806b39bddc8ab6-0-ab0baba50e8778f256e505cb2f96ba5b",
+   images:["https://z-cdn-media.chatglm.cn/files/1d611d25-260b-42ad-9979-93c3fefdcaef.png?auth_key=1877216063-3b71059264fd4c4d90806b39bddc8ab6-0-ab0baba50e8778f256e505cb2f96ba5b"],
+   desc:"Elegant wedding invitation with watercolor botanicals.",coverPos:"center top",
+   problem:"Couple wanted a unique, non-template wedding invitation that blended cultural traditions with modern elegance.",
+   solution:"Watercolor botanical illustrations with Islamic blessings and refined typography in a sophisticated, memorable layout.",
+   tools:["Photoshop","Illustrator"],result:"Guests praised the invitation design — multiple requests from attendees for similar custom designs."},
+    
+  ];
+
+
+/* ========== EXTRACT FILTERS ========== */
+var filters=[];
+(function(){var s={};for(var i=0;i<projects.length;i++){var f=projects[i].filter;if(!s[f]){s[f]=true;filters.push(f)}}})();
+
+/* ========== RENDER FILTER BUTTONS ========== */
+function renderFilterButtons(){
+  var c=document.getElementById('projectsFilters');if(!c)return;
+  var h='<button class="filter-btn active" data-filter="All">All</button>';
+  for(var i=0;i<filters.length;i++) h+='<button class="filter-btn" data-filter="'+filters[i]+'">'+filters[i]+'</button>';
+  c.innerHTML=h;
+}
+renderFilterButtons();
+
+/* ========== RENDER PROJECT CARDS ========== */
+function renderGalleryGrid(){
+  var grid=document.getElementById('galleryGrid');if(!grid)return;
+  var html='';
+  for(var i=0;i<projects.length;i++){
+    var p=projects[i];
+    var pos=p.coverPos?' style="object-position:'+p.coverPos+'"':'';
+    html+='<div class="gallery-item" data-gallery="'+i+'">'+
+      '<img src="'+p.cover+'" alt="'+p.title+'" loading="lazy"'+pos+'>'+
+      '<div class="gallery-item-overlay"><div class="gallery-item-cat">'+p.filter+'</div><div class="gallery-item-name">'+p.title+'</div></div>'+
+      '</div>';
+  }
+  grid.innerHTML=html;
+}
+renderGalleryGrid();
+
+
+/* ========== GALLERY MODAL ========== */
+var galleryState={open:false,index:-1,imgIndex:0,transitioning:false,zoomed:false};
+(function(){
+  var modal=$('#galleryModal'),backdrop=$('#galleryBackdrop'),closeBtn=$('#galleryClose'),
+      prevBtn=$('#galleryPrev'),nextBtn=$('#galleryNext'),imgEl=$('#galleryImage'),
+      catEl=$('#galleryCat'),titleEl=$('#galleryTitle'),counterEl=$('#galleryCounter'),
+      descEl=$('#galleryDesc'),thumbsEl=$('#galleryThumbs'),viewport=$('#galleryViewport');
+  if(!modal)return;
+  function openGallery(idx){
+    var p=projects[idx];if(!p)return;
+    galleryState={open:true,index:idx,imgIndex:0,transitioning:false,zoomed:false};
+    catEl.textContent=p.filter;titleEl.textContent=p.title;descEl.textContent=p.desc;
+    var total=p.images.length,isSingle=total<=1;
+    modal.classList.toggle('single-image',isSingle);
+    prevBtn.classList.toggle('arrow-hidden',isSingle);nextBtn.classList.toggle('arrow-hidden',isSingle);
+    counterEl.textContent=isSingle?'':'1 / '+total;
+    var th='';for(var i=0;i<total;i++) th+='<div class="gallery-thumb'+(i===0?' active':'')+'" data-img="'+i+'"><img src="'+p.images[i]+'" alt="'+p.title+' '+(i+1)+'" loading="lazy"></div>';
+    thumbsEl.innerHTML=th;
+    setImage(0,false);
+    viewport.classList.remove('zoomed');imgEl.classList.remove('zoomed');
+    modal.classList.add('active');document.body.style.overflow='hidden';
+  }
+  function loadImage(idx,animate){
+    var p=projects[galleryState.index];if(!p||galleryState.transitioning)return;
+    galleryState.transitioning=true;
+    if(animate){imgEl.classList.add('transitioning');setTimeout(function(){setImage(idx);setTimeout(function(){imgEl.classList.remove('transitioning');galleryState.transitioning=false},50)},200)}
+    else{setImage(idx);galleryState.transitioning=false}
+  }
+  function setImage(idx){
+    var p=projects[galleryState.index];imgEl.src=p.images[idx];imgEl.alt=p.title+' — Image '+(idx+1);
+    imgEl.classList.remove('zoomed');viewport.classList.remove('zoomed');galleryState.zoomed=false;
+    var total=p.images.length;counterEl.textContent=total>1?((idx+1)+' / '+total):'';
+    thumbsEl.querySelectorAll('.gallery-thumb').forEach(function(t,i){t.classList.toggle('active',i===idx);if(i===idx)t.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})});
+    galleryState.imgIndex=idx;
+  }
+  function goNext(){var p=projects[galleryState.index];loadImage((galleryState.imgIndex+1)%p.images.length,true)}
+  function goPrev(){var p=projects[galleryState.index];loadImage((galleryState.imgIndex-1+p.images.length)%p.images.length,true)}
+  function closeGallery(){modal.classList.remove('active');document.body.style.overflow='';galleryState.open=false;setTimeout(function(){imgEl.src=''},400)}
+  document.addEventListener('click',function(e){var btn=e.target.closest('[data-gallery]');if(btn){e.stopPropagation();openGallery(parseInt(btn.getAttribute('data-gallery'),10))}});
+  if(backdrop)backdrop.addEventListener('click',closeGallery);
+  if(closeBtn)closeBtn.addEventListener('click',closeGallery);
+  if(prevBtn)prevBtn.addEventListener('click',goPrev);
+  if(nextBtn)nextBtn.addEventListener('click',goNext);
+  thumbsEl.addEventListener('click',function(e){var t=e.target.closest('.gallery-thumb');if(!t)return;var idx=parseInt(t.getAttribute('data-img'),10);if(idx!==galleryState.imgIndex)loadImage(idx,true)});
+  viewport.addEventListener('click',function(e){
+    if(e.target.closest('.gallery-arrow'))return;
+    if(!galleryState.zoomed){imgEl.classList.add('zoomed');viewport.classList.add('zoomed');galleryState.zoomed=true}
+    else{imgEl.classList.remove('zoomed');viewport.classList.remove('zoomed');galleryState.zoomed=false}
+  });
+  document.addEventListener('keydown',function(e){
+    if(!galleryState.open)return;
+    if(e.key==='Escape')closeGallery();
+    else if(e.key==='ArrowRight'&&!galleryState.zoomed)goNext();
+    else if(e.key==='ArrowLeft'&&!galleryState.zoomed)goPrev();
+  });
+  (function(){var sx=0,dx=0;
+    viewport.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;dx=0},{passive:true});
+    viewport.addEventListener('touchmove',function(e){dx=e.touches[0].clientX-sx},{passive:true});
+    viewport.addEventListener('touchend',function(){var p=projects[galleryState.index];if(!p||p.images.length<=1||galleryState.zoomed)return;if(Math.abs(dx)>50){dx<0?goNext():goPrev()}},{passive:true});
+  })();
+})();
+
+/* ========== INTERACTIVE TERMINAL ========== */
+(function(){
+  var body=$('#terminalBody'),input=$('#terminalInput'),cursor=$('#terminalCursor');
+  if(!body||!input)return;
+  var commands={
+    help:{out:['Available commands:','  whoami      — Who am I','  skills      — My skills','  contact     — Contact info','  projects    — Project count','  experience — My background','  clear       — Clear terminal','  about       — Short bio'],delay:0},
+    whoami:{out:['Omar Mohamed Shehata','Electrical Engineering Student','Communications & Electronics','Horus University'],highlight:[0],delay:30},
+    skills:{out:['[Web Dev]      HTML, CSS, JavaScript','[Programming]  Python, C/C++','[Networking]    CCNA, Packet Tracer','[Design]       Photoshop, Illustrator, InDesign','[Security]     Penetration Testing (eJPTv2)'],delay:20},
+contact:{out:['Email:     oshehata925@gmail.com','LinkedIn:  linkedin.com/in/omar-shehata-020bab344','Behance:   behance.net/omarshehata14','Instagram: @omarshehata_designs26'],delay:20},
+    projects:{out:['Total projects: '+projects.length,'Categories: Design, Branding, Advertising, Creative','Latest: Wedding Invitation, MR. COFFEE, SUITS Gentleman'],delay:20},
+    experience:{out:['2022-2027  B.Sc. Electrical Engineering — Horus University','2024-Present  Freelance Graphic Designer','2023-Present  Networking (CCNA track)','2025-Present  Cyber Security (eJPTv2 student)'],delay:20},
+    about:{out:['I\'m Omar — an engineering student who blends technical skills','with creative design. I build secure websites, design brands,','and study cyber security. Based in Egypt, working globally.'],delay:20},
+    clear:{out:[],delay:0,clear:true}
+  };
+  function addLine(text,cls){var d=document.createElement('div');d.className='terminal-line '+(cls||'output');d.textContent=text;body.appendChild(d);body.scrollTop=body.scrollHeight}
+  function processCmd(cmd){
+    var trimmed=cmd.trim().toLowerCase();
+    addLine('$ '+cmd,'cmd');
+    if(!trimmed){return}
+    var c=commands[trimmed];
+    if(!c){addLine('Command not found: '+trimmed+'. Type "help" for available commands.','output');return}
+    if(c.clear){body.innerHTML='';return}
+    var lines=c.out,i=0;
+    function next(){if(i>=lines.length)return;
+      var cls='output';if(c.highlight&&c.highlight.indexOf(i)!==-1)cls='highlight';
+      addLine(lines[i],cls);i++;setTimeout(next,c.delay)}
+    next();
+  }
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){var v=input.value;input.value='';if(v)processCmd(v)}
+  });
+  body.parentElement.addEventListener('click',function(){input.focus()});
+  input.addEventListener('focus',function(){cursor.style.display='none'});
+  input.addEventListener('blur',function(){cursor.style.display=''});
+})();
+
+/* ========== LOADER ========== */
+window.addEventListener('load',function(){setTimeout(function(){var l=$('#loader');if(l)l.classList.add('hidden')},1200)});
+
+/* ========== PARTICLES ========== */
+(function(){
+  var c=$('#particleCanvas');if(!c)return;var ctx=c.getContext('2d'),ps=[],mx=-999,my=-999,w,h;
+  function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
+  resize();window.addEventListener('resize',resize);
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+  function P(){this.reset()}
+  P.prototype.reset=function(){this.x=Math.random()*w;this.y=Math.random()*h;this.s=Math.random()*2+.5;this.sx=(Math.random()-.5)*.4;this.sy=(Math.random()-.5)*.4;this.o=Math.random()*.5+.1};
+  P.prototype.update=function(){this.x+=this.sx;this.y+=this.sy;var dx=mx-this.x,dy=my-this.y,d=Math.sqrt(dx*dx+dy*dy);if(d<150){this.x-=dx*.01;this.y-=dy*.01}if(this.x<0||this.x>w||this.y<0||this.y>h)this.reset()};
+  P.prototype.draw=function(){ctx.beginPath();ctx.arc(this.x,this.y,this.s,0,Math.PI*2);ctx.fillStyle='rgba(168,85,247,'+this.o+')';ctx.fill()};
+  var n=Math.min(Math.floor(w*h/15000),80);for(var i=0;i<n;i++)ps.push(new P);
+  function connect(){for(var i=0;i<ps.length;i++)for(var j=i+1;j<ps.length;j++){var dx=ps[i].x-ps[j].x,dy=ps[i].y-ps[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(ps[i].x,ps[i].y);ctx.lineTo(ps[j].x,ps[j].y);ctx.strokeStyle='rgba(168,85,247,'+(0.08*(1-d/120))+')';ctx.lineWidth=.5;ctx.stroke()}}}
+  function animate(){ctx.clearRect(0,0,w,h);for(var i=0;i<ps.length;i++){ps[i].update();ps[i].draw()}connect();requestAnimationFrame(animate)}
+  animate();
+})();
+
+/* ========== CURSOR ========== */
+(function(){
+  var d=$('#cursorDot'),r=$('#cursorRing');if(!d||!r||window.matchMedia('(pointer:coarse)').matches)return;
+  var mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+  document.addEventListener('mouseenter',function(){document.body.classList.remove('cursor-hidden')});
+  document.addEventListener('mouseleave',function(){document.body.classList.add('cursor-hidden')});
+  (function loop(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;d.style.left=mx+'px';d.style.top=my+'px';r.style.left=rx+'px';r.style.top=ry+'px';requestAnimationFrame(loop)})();
+  document.addEventListener('mouseover',function(e){if(e.target.closest('.btn,.form-submit,.filter-btn,.project-card-btn'))r.classList.add('hover-btn');else if(e.target.closest('a,button,.project-card,.skill-card,.stat-card,.testimonial-card,.timeline-card,.contact-detail-item,.theme-toggle,.gallery-thumb,.service-card,.why-card,.cs-close,.gallery-close'))r.classList.add('hover')});
+  document.addEventListener('mouseout',function(e){r.classList.remove('hover-btn','hover')});
+})();
+
+/* ========== SCROLL PROGRESS ========== */
+(function(){var b=$('#scrollProgress');if(!b)return;window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;b.style.width=(d>0?(s/d)*100:0)+'%'})})();
+
+/* ========== NAVBAR ========== */
+(function(){
+  var nav=$('#navbar'),ham=$('#hamburger'),links=$('#navLinks'),ov=$('#mobileOverlay'),lnks=$$('.nav-link');
+  window.addEventListener('scroll',function(){if(nav)nav.classList.toggle('scrolled',window.scrollY>50)});
+  function closeMenu(){if(ham)ham.classList.remove('active');if(links)links.classList.remove('open');if(ov)ov.classList.remove('active');document.body.style.overflow=''}
+  if(ham)ham.addEventListener('click',function(){var o=links.classList.contains('open');closeMenu();if(!o){ham.classList.add('active');links.classList.add('open');ov.classList.add('active');document.body.style.overflow='hidden'}});
+  if(ov)ov.addEventListener('click',closeMenu);
+  lnks.forEach(function(l){l.addEventListener('click',function(){closeMenu();lnks.forEach(function(x){x.classList.remove('active')});this.classList.add('active')})});
+  var secs=$$('section[id]');
+  window.addEventListener('scroll',function(){var sy=window.scrollY+200;secs.forEach(function(s){var t=s.offsetTop,h=s.offsetHeight,id=s.getAttribute('id'),l=$('.nav-link[href="#'+id+'"]');if(l)l.classList.toggle('active',sy>=t&&sy<t+h)})});
+})();
+
+/* ========== THEME ========== */
+(function(){var t=$('#themeToggle');if(!t)return;if(localStorage.getItem('theme')==='light')document.body.classList.add('light');t.addEventListener('click',function(){document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark')})})();
+
+/* ========== TYPING ========== */
+(function(){
+  var ne=$('#heroName'),te=$('#heroTitle');if(!ne||!te)return;
+  var nm='Omar Mohamed Shehata',ts=['Electrical Engineering Student','Graphic Designer','Web Developer','Networking Enthusiast','Cyber Security Student'],ni=0,ti=0,ci=0,del=false;
+  function typeName(){if(ni<=nm.length){ne.innerHTML=nm.substring(0,ni)+'<span class="cursor-blink"></span>';ni++;setTimeout(typeName,60)}else typeTitle()}
+  function typeTitle(){var c=ts[ti];if(!del){ci++;if(ci>c.length){del=true;setTimeout(typeTitle,2000);return}}else{ci--;if(ci<0){del=false;ti=(ti+1)%ts.length;setTimeout(typeTitle,400);return}}te.textContent=c.substring(0,ci);setTimeout(typeTitle,del?30:50)}
+  setTimeout(typeName,1400);
+})();
+
+/* ========== HERO PARALLAX ========== */
+(function(){var c=$('.hero-content'),i=$('.hero-image');if(!c||!i)return;window.addEventListener('scroll',function(){var s=window.scrollY;if(s>800)return;c.style.transform='translateY('+s*.3+'px)';i.style.transform='translateY('+s*.15+'px)'})})();
+
+/* ========== REVEAL ON SCROLL ========== */
+function observeReveals(els){
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var d=getComputedStyle(e.target).getPropertyValue('--delay');if(d&&d!=='0s')setTimeout(function(){e.target.classList.add('revealed')},parseFloat(d)*1000);else e.target.classList.add('revealed');obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){obs.observe(el)});
+}
+observeReveals($$('.reveal-up,.reveal-left,.reveal-right,.reveal-scale'));
+
+/* ========== SKILL BARS ========== */
+(function(){var bars=$$('.skill-bar-fill');var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var w=e.target.getAttribute('data-width');e.target.style.setProperty('--fill-width',w+'%');e.target.classList.add('animated');obs.unobserve(e.target)}})},{threshold:.3});bars.forEach(function(b){obs.observe(b)})})();
+
+/* ========== COUNTERS ========== */
+(function(){var counters=$$('.counter');var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var el=e.target,target=parseInt(el.getAttribute('data-target'),10),dur=2500,st=null;function a(ts){if(!st)st=ts;var p=Math.min((ts-st)/dur,1),eased=1-Math.pow(1-p,4);el.textContent=Math.floor(eased*target);if(p<1)requestAnimationFrame(a);else el.textContent=target}requestAnimationFrame(a);obs.unobserve(el)}})},{threshold:.5});counters.forEach(function(c){obs.observe(c)})})();
+
+/* ========== SCROLL TOP ========== */
+(function(){var b=$('#scrollTop');if(!b)return;window.addEventListener('scroll',function(){b.classList.toggle('visible',window.scrollY>500)});b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+
+
+/* ========== TOAST ========== */
+function showToast(msg,isError){
+  var t=$('#toast'),m=$('#toastMessage');if(!t||!m)return;
+  m.textContent=msg;t.classList.remove('toast-error');if(isError)t.classList.add('toast-error');
+  t.classList.add('show');setTimeout(function(){t.classList.remove('show');t.classList.remove('toast-error')},4000);
+}
+
+/* ========== SMOOTH SCROLL ========== */
+ $$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
+
+/* ========== CONTACT FORM WITH EMAILJS ========== */
+(function(){
+  var form=$('#contactForm'),btn=$('#formSubmitBtn');
+  if(!form)return;
+  emailjs.init('edrpO5hZH8m53o6hZ');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=$('#formName').value.trim(),email=$('#formEmail').value.trim(),
+        subject=$('#formSubject').value,message=$('#formMessage').value.trim();
+    if(!name||!email||!subject||!message){showToast('Please fill in all fields.',true);return}
+    btn.disabled=true;btn.innerHTML='<span class="spinner"></span> Sending...';
+    var params={from_name:name,from_email:email,subject:subject,message:message,to_name:'Omar Shehata'};
+    emailjs.send('service_3l6pdvk','template_df3cmqd',params)
+    .then(function(){
+        showToast('Message sent successfully! I\'ll reply within 24 hours.');
+        form.reset();
+        btn.disabled=false;btn.innerHTML='Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+      })
+      .catch(function(err){
+        showToast('Failed to send message. Please try instgram instead.',true);
+        btn.disabled=false;btn.innerHTML='Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+        console.error('EmailJS error:',err);
+      });
+  });
+})();
+
+/* ========== LEAD MAGNET FORM ========== */
+(function(){
+  var form=$('#leadForm'),wrap=$('#leadFormWrap'),success=$('#leadSuccess');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=form.querySelector('.lead-input').value.trim();
+    if(!email){showToast('Please enter your email.',true);return}
+    var btn=form.querySelector('.btn');btn.disabled=true;btn.textContent='Sending...';
+    setTimeout(function(){
+      wrap.style.display='none';success.classList.add('show');
+      showToast('Consultation requested! Check your inbox.');
+    },1200);
+  });
+})();
+</script>
+</body>
+</html>
